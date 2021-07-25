@@ -1,0 +1,64 @@
+
+.Todotemplate{
+    height:840px;
+    background: white;
+    width:520px;
+    margin-left:0px;
+    border-radius:5px;
+    align-items: center;
+    border: solid 10px powderblue;
+}
+
+.remove_btn{
+    float:right;
+    margin-right:10px;
+    width:130px;
+    background: greenyellow;
+    text-align: center;
+    border-radius: 10px;
+}
+.titlen{
+    background: white;
+    color:black;
+    margin:4px;
+    border: solid 4px greenyellow;
+    text-align: center;
+    border-radius: 4px;
+    
+    height:2rem;
+    font-size:1rem;
+   
+}
+
+.content{
+
+    background:white;
+    color:black
+}
+.TodoItem{
+    margin-top:10px;
+    font-size:3px;
+    border: solid 4px greenyellow;
+    color:black;
+
+}
+.TodoInsert{
+    height:70px;
+    background: white;
+    border: solid 4px greenyellow;
+    text-align: center;
+    border-radius: 4px;
+    
+}
+
+.Todoinput{
+    background: white;
+    outline: none;
+    border: 4px solid black;
+    padding: 4px;
+    font-size :2px;
+    font:bold;
+    line-height: 1.5;
+    color: black;
+
+}

@@ -1,0 +1,30 @@
+
+.Right_template{
+
+    color:black;
+    height:820px;
+    text-align: center;
+    float:right;
+    width:2280px;
+    background: white;
+    border: 10px solid red;
+    
+}
+.Right_elec{
+
+    color:black;
+    height:200px;
+    width:2280px;
+    background:none;
+    border:10px solid blue;
+
+}
+
+.Right_main{
+    color:black;
+    padding-top:1px;
+    height:530px;
+    width:2280px;
+    background:none;
+    border:10px solid green;
+}
