@@ -4,7 +4,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 
 function Calendar(props){
     return(
-      <div {...props} style={{backgroundColor:'rgb(176, 204, 179)', height:'100%'}}>
+      <div {...props}>
         <FullCalendar
           plugins={[dayGridPlugin,interactionPlugin]}
           eventColor='black'
