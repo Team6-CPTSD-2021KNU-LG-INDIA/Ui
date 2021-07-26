@@ -19,7 +19,7 @@ function App(props){
 	}
 	switch(page.path[0]){
 		case('calendar'):
-			return (<MainPanel stype={{backgroundColor:'gray'}}
+			return (<MainPanel
 				depth={0}
 				devices={devices} setDevices={setDevices}
 				pageList={pageList} page={page} movePage={movePage}
@@ -31,8 +31,7 @@ function App(props){
 			/>);
 		case('setting'):
 		return (
-			<div {...props}>
-			</div>
+			<div {...props}>hi</div>
 		);
 		default:
 	}

@@ -17,15 +17,15 @@ function ListItem({devices,index,setDevices}){
     return(
       <Row key={index}>
         <Cell size='60%'>
-          <Item 
-            size='small' 
+          <Item
+            size='small'
             onClick={()=>{
               setStatus(1);
             }}
           >{devices[index].name}({devices[index].id})</Item>
         </Cell>
         <Cell size='40%'>
-          <Item 
+          <Item
             size='small'
             onClick={()=>{
               setStatus(2);
@@ -38,25 +38,25 @@ function ListItem({devices,index,setDevices}){
     return(
       <Row key={index}>
         <Cell size='60%'>
-          <Input 
+          <Input
             size='small'
             defaultValue={devices[index].name}
             placeholder='device name'
-            onComplete={(e)=>{
+            onComplete={()=>{
               //console.log(e.target.value);
             }}/>
         </Cell>
         <Cell size='40%'>
-          <Item 
+          <Item
             size='small'
-            onClick={(e)=>{
+            onClick={()=>{
               setStatus(0);
             }}
           >rename</Item>
         </Cell>
       </Row>
     )
-    case(2): 
+    case(2):
     return(
       <Row key={index}>
         <Cell size='40%'>
@@ -65,7 +65,7 @@ function ListItem({devices,index,setDevices}){
           </BodyText>
         </Cell>
         <Cell size='30%'>
-          <Item 
+          <Item
             size='small'
             onClick={(e)=>{
               let res = devices.slice();
@@ -76,7 +76,7 @@ function ListItem({devices,index,setDevices}){
           >yes</Item>
         </Cell>
         <Cell size='30%'>
-          <Item 
+          <Item
             size='small'
             onClick={()=>{
               setStatus(0);
@@ -89,12 +89,12 @@ function ListItem({devices,index,setDevices}){
 }
 
 function ListComponent(props){
-  if(props.isSearch == true){
+  if(props.isSearch === true){
     return (
       <BodyText>Searching Device...</BodyText>
     );
   }
-  else if (props.devices.length == 0){
+  else if (props.devices.length === 0){
     return (
       <BodyText>There is no connected device!!</BodyText>
     );
@@ -137,7 +137,7 @@ function DeviceList(props){
             <Heading showLine>Connected Devices</Heading>
           </Cell>
           <Cell>
-            <ListComponent 
+            <ListComponent
               devices={props.devices}
               isSearch={isSearch}
               setDevices={props.setDevices}

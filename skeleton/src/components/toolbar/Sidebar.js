@@ -7,7 +7,7 @@ function Sidebar(props){
       <div {...props} style={{backgroundColor:'darkslategray', height:'100%'}}>
         <Column>
           <Cell size="10%" style={{backgroundColor:''}}>
-            <BodyText 
+            <BodyText
               style={{height:'50%', width:'93%', fontSize:'3rem', paddingTop:'5%'}}
               centered={true}
             >Welcome!</BodyText>
