@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {Panel,Header} from '@enact/sandstone/Panels';
 import Todo from '../components/Detail/Todo';
 import TodoInsert from '../components/Detail/TodoInsert';
@@ -20,9 +19,7 @@ const Detail= ()=>{
                              <TodoInsert />
                              <Todolist />
                         </div>
-                    
                     </Todo>
-                    
                 </Scroller>
             </div>
         </Panel>
