@@ -4,11 +4,17 @@ import TodoInsert from '../components/Detail/TodoInsert';
 import Scroller from '@enact/sandstone/Scroller';
 import Todolist from '../components/Detail/Todolist';
 import RightDetail from '../components/RightDetail/RightDetail';
-const Detail= ()=>{
 
+const Detail= (props)=>{
     return(
-        <Panel >
-            <Header title="Detail"> </Header>
+        <Panel>
+            <Header 
+            onClose={()=>{
+                let path = props.page.path.slice(); path.pop();
+                path.push('calendar');
+                props.movePage(path,null);
+            }}
+            title={props.page.args.targetDate.toString()}/>
                 <div style={{height:'400px',  horizontalScrollbar:"visible"}}>
                  <Scroller>
                  <RightDetail>

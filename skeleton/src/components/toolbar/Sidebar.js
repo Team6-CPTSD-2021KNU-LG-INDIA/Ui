@@ -15,7 +15,7 @@ function Sidebar(props){
           <Cell size="70%">
               <DeviceList style={{height:'100%'}}
 								movePage={props.movePage} page={props.page} pageList={props.pageList}
-								devices={devices} setDevices={setDevices}
+								devices={props.devices} setDevices={props.setDevices}
 							/>
           </Cell>
           <Cell size="20%" style={{backgroundColor:''}}>

@@ -147,7 +147,7 @@ function DeviceList(props){
             onClick={()=>{
               setSearch(true);
               setTimeout(()=>{
-                setDevices(testDevices);
+                props.setDevices(testDevices);
                 setSearch(false);
               },500)
             }}

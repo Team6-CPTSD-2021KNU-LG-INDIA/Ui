@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App(props){
 	const [devices, setDevices] = useState([]);
-	const pageList=['calendar','detail','setting'];=
+	const pageList=['calendar','detail','setting'];
 	const [page, setPage] = useState({
 		path:['calendar'],
 		args:null,
@@ -19,7 +19,7 @@ function App(props){
 	}
 	switch(page.path[0]){
 		case('calendar'):
-			return (<MainPanel
+			return (<MainPanel stype={{backgroundColor:'gray'}}
 				depth={0}
 				devices={devices} setDevices={setDevices}
 				pageList={pageList} page={page} movePage={movePage}
