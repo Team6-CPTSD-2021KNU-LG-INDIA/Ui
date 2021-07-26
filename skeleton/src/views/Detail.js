@@ -12,7 +12,7 @@ const Detail= (props)=>{
             onClose={()=>{
                 let path = props.page.path.slice(); path.pop();
                 path.push('calendar');
-                props.movePage(path,null);
+                props.movePage(path,{initialDate:props.page.args.targetDate});
             }}
             title={props.page.args.targetDate.toString()}/>
                 <div style={{height:'400px',  horizontalScrollbar:"visible"}}>

@@ -2,7 +2,7 @@ import Calendar from '../components/Calendar'
 import Sidebar from '../components/toolbar/Sidebar'
 import {Row, Cell} from '@enact/ui/Layout';
 
-function MainPanel({depth,pageList,page,movePage, devices, setDevices}){
+function MainPanel({depth,pageList,page,movePage, devices, setDevices, events, setEvents}){
 	return (
 		<div style={{height:'100%'}}>
 			<Row style={{height:'100%', width:'100%', backgroundColor:'rgb(83, 144, 149)',}}>
@@ -14,6 +14,7 @@ function MainPanel({depth,pageList,page,movePage, devices, setDevices}){
 						width:'98%',
 					}}
 						movePage={movePage} page={page} pageList={pageList}
+						events={events} setEvents={setEvents}
 					/>
 				</Cell>
 				<Cell size='25%'>
