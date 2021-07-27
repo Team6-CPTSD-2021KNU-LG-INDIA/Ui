@@ -1,30 +1,67 @@
 
+.TodoItem{
+    margin-top:10px;
+    font-size:3px;
+    border: solid 4px black;
+    border-radius:20px;
+    color:black;
+    box-shadow:0 0 20px #666;
+
+}
+.remove_btn{
+    float:right;
+    margin-right:10px;
+    width:130px;
+    background: greenyellow;
+    text-align: center;
+    border-radius: 10px;
+}
+
 .Right_template{
 
+    
     color:black;
-    height:820px;
-    text-align: center;
+    height:1050px;
     float:right;
     width:2280px;
     background: white;
-    border: 10px solid red;
-    
+    border: 10px solid black;
+    border-radius:20px;
+    box-shadow:0 0 40px #666;
 }
 .Right_elec{
 
     color:black;
-    height:200px;
-    width:2280px;
+    text-align: center;
+    height:300px;
+    width:2200px;
     background:none;
-    border:10px solid blue;
-
+    border:1px solid black;
+    border-radius:20px;
+    margin:30px;
+    box-shadow:0 0 20px #666;
 }
 
 .Right_main{
     color:black;
-    padding-top:1px;
-    height:530px;
-    width:2280px;
+    padding-top:5px;
+    margin:30px;
+    height:550px;
+    width:2200px;
     background:none;
-    border:10px solid green;
+    border:1px solid black;
+    border-radius:20px;
+    box-shadow:0 0 20px #666;
 }
+
+.alarm_img{
+    margin-left:600px;
+    margin-top:10px;
+    padding-right:40px;
+}
+.repeat_img{
+    margin-left:600px;
+    margin-top:10px;
+    padding-right:40px;
+}
+

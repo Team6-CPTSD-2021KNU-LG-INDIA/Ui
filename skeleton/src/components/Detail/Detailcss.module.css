@@ -1,32 +1,27 @@
 
 .Todotemplate{
-    height:840px;
+    height:1050px;
     background: white;
-    width:520px;
+    width:450px;
     margin-left:0px;
-    border-radius:5px;
+    border-radius:20px;
     align-items: center;
-    border: solid 10px powderblue;
+    float:left;
+    border: solid 10px black;
+    box-shadow:0 0 40px #666;
 }
 
-.remove_btn{
-    float:right;
-    margin-right:10px;
-    width:130px;
-    background: greenyellow;
-    text-align: center;
-    border-radius: 10px;
-}
+
 .titlen{
     background: white;
     color:black;
-    margin:4px;
-    border: solid 4px greenyellow;
-    text-align: center;
-    border-radius: 4px;
-    
+    margin:10px;
+    border: solid 4px gray;
+    border-radius: 10px;
     height:2rem;
     font-size:1rem;
+    text-align: center;
+    box-shadow:0 0 10px #666;
    
 }
 
@@ -46,7 +41,7 @@
     height:70px;
     background: white;
     border: solid 4px greenyellow;
-    text-align: center;
+    
     border-radius: 4px;
     
 }

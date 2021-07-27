@@ -1,36 +1,62 @@
 import {Panel,Header} from '@enact/sandstone/Panels';
 import Todo from '../components/Detail/Todo';
-import TodoInsert from '../components/Detail/TodoInsert';
+
 import Scroller from '@enact/sandstone/Scroller';
-import Todolist from '../components/Detail/Todolist';
+import {Row, Cell} from '@enact/ui/Layout';
 import RightDetail from '../components/RightDetail/RightDetail';
 
 const Detail= (props)=>{
     return(
-        <Panel>
-            <Header 
-            onClose={()=>{
+        <Row style={{height:'100%', width:'100%'}}>
+            <Panel>
+                <Header onClose={()=>{
                 let path = props.page.path.slice(); path.pop();
                 path.push('calendar');
-                props.movePage(path,{initialDate:props.page.args.targetDate});
-            }}
-            title={props.page.args.targetDate.toString()}/>
-                <div style={{height:'400px',  horizontalScrollbar:"visible"}}>
-                 <Scroller>
-                 <RightDetail>
+                props.movePage(path,null);
+            }} title={props.page.args.targetDate.toString()} >
 
-                 </RightDetail>
-                    <Todo>
-                         <div>
-                             <TodoInsert />
-                             <Todolist />
-                        </div>
-                    </Todo>
-                </Scroller>
-            </div>
-        </Panel>
-    )
+                <Cell size='30%'>
+                      <Todo>
+                                                    
+                      </Todo>
+                </Cell> 
 
+                <Cell size='70%'>
+                    <RightDetail>
+
+                    </RightDetail>
+                </Cell>  
+             
+            
+                </Header>
+                </Panel>
+              </Row>
+        
+            /*
+            <Panel>
+                <Header 
+                onClose={()=>{
+                    let path = props.page.path.slice(); path.pop();
+                    path.push('calendar');
+                    props.movePage(path,null);
+                }}
+                title={props.page.args.targetDate.toString()}/>
+                    
+                    <div style={{height:'400px',  horizontalScrollbar:"visible"}}>
+                    <Cell size='25%'>
+                        <RightDetail>
+
+                        </RightDetail>
+                    </Cell>
+                    <Cell size='75%'>
+                            <Todo>
+                                
+                            </Todo>
+                    </Cell> 
+                    </div>
+            </Panel>*/
+        
+    );
 
 }
 

@@ -7,9 +7,6 @@ import BodyText from '@enact/sandstone/BodyText';
 import Input from '@enact/sandstone/Input';
 import VirtualList from "@enact/sandstone/VirtualList";
 import Item from '@enact/sandstone/Item';
-import {getDevices, makeDummy} from '../../Modules/iotModule'
-
-makeDummy();
 
 function ListItem({devices,index,setDevices}){
   //const statusList=['info','rename','remove']
@@ -120,6 +117,19 @@ function ListComponent(props){
 function DeviceList(props){
   const [isSearch, setSearch] = useState(false);
 
+  class DeviceInfo{
+    constructor(name,id,connection){
+      this.name = name;
+      this.id = id;
+      this.connection = connection;
+    }
+  }
+
+  let testDevices = [];
+  ['1','2','3','4','5','6','7','8','9','10'].forEach((item)=>{
+    testDevices.push(new DeviceInfo(item,'id',true));
+  });
+
   return(
     <div {...props}>
         <Column align='center' style={{height:'100%', width:'100%'}}>
@@ -137,7 +147,7 @@ function DeviceList(props){
             onClick={()=>{
               setSearch(true);
               setTimeout(()=>{
-                props.setDevices(getDevices());
+                props.setDevices(testDevices);
                 setSearch(false);
               },500)
             }}

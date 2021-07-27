@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import styles from './Detailcss.module.css' 
 import TodoInsert from './TodoInsert';
-import Todolist from './Todolist';
-
+import Todolist from '../RightDetail/Todolist';
+import Todoitem from '../RightDetail/Todoitem';
 const Todo =(props)=>{
     
 
@@ -13,9 +13,7 @@ const Todo =(props)=>{
             </div>
             
              <div className={`${styles.content},`}>
-                 <Todolist >
-
-                </Todolist>
+                
             </div>
 
             

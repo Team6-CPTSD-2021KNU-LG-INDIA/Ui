@@ -9,8 +9,7 @@ const RightDetail =()=>{
     return(
     
         <div className={`${styles.Right_template}`}>
-            right pannel
-            
+          
             <Right_Elc>
 
             </Right_Elc>
