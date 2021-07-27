@@ -12,7 +12,7 @@ const Detail= (props)=>{
                 <Header onClose={()=>{
                 let path = props.page.path.slice(); path.pop();
                 path.push('calendar');
-                props.movePage(path,null);
+                props.movePage(path,{initialDate:props.page.args.targetDate});
             }} title={props.page.args.targetDate.toString()} >
 
                 <Cell size='30%'>
