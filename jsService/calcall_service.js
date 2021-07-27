@@ -53,7 +53,7 @@ service.register("createDB",function(message){
         ]
     };
 
-    service.call(service_name+'find',query,function(reply){
+    service.call(service_name+'find',query ,function(reply){
         if(reply.payload.returnValue){
             message.respond({msg:"already exists"});
         }
