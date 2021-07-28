@@ -115,7 +115,7 @@ function ListComponent(props){
           itemRenderer={({ index }) => (
             <ListItem index={index} devices={props.devices} setDevices={props.setDevices}/>
           )}
-          itemSize={60}
+          itemSize={500}
         />
       </Panel>
     );
