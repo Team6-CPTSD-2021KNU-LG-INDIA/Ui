@@ -90,6 +90,8 @@ function ListItem({devices,index,setDevices}){
     )
   }
 }
+//
+
 
 function ListComponent(props){
   if(props.isSearch === true){
@@ -117,6 +119,9 @@ function ListComponent(props){
   }
 }
 
+//
+
+
 function DeviceList(props){
   const [isSearch, setSearch] = useState(false);
 
@@ -133,6 +138,7 @@ function DeviceList(props){
               setDevices={props.setDevices}
             />
 					</Cell>
+
           <Button
             onClick={()=>{
               setSearch(true);
