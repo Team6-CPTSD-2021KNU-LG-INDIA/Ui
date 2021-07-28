@@ -18,7 +18,6 @@
 }
 
 .Right_template{
-
     
     color:black;
     height:1050px;
@@ -30,15 +29,15 @@
     box-shadow:0 0 40px #666;
 }
 .Right_elec{
-
+    
+    overflow-y: scroll;
     color:black;
-    text-align: center;
     height:300px;
     width:2200px;
     background:none;
     border:1px solid black;
     border-radius:20px;
-    margin:30px;
+    margin:20px;
     box-shadow:0 0 20px #666;
 }
 
