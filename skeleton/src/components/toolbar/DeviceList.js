@@ -14,7 +14,7 @@ makeDummy();
 function ListItem({devices,index,setDevices}){
   //const statusList=['info','rename','remove']
   const [status,setStatus] = useState(0)
-
+  let value=devices[index].name;
   switch(status){
     case(0):
     return(
@@ -45,14 +45,17 @@ function ListItem({devices,index,setDevices}){
             size='small'
             defaultValue={devices[index].name}
             placeholder='device name'
-            onComplete={()=>{
-              //console.log(e.target.value);
+            onComplete={(e)=>{
+              value=e.value;
             }}/>
         </Cell>
         <Cell size='40%'>
           <Item
             size='small'
-            onClick={()=>{
+            onClick={(e)=>{
+              let temp = devices.slice();
+              temp[index].name=value;
+              setDevices(temp);
               setStatus(0);
             }}
           >rename</Item>
