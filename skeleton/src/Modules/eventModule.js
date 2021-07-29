@@ -4,7 +4,7 @@ let events=[];
 
 export function getEventList(){
   let res;
-  callAPI('getEventlist',null,(msg)=>{
+  callAPI('getEventlist','{}',(msg)=>{
     var arg = JSON.parse(msg);
     res = arg.Response;
   });
