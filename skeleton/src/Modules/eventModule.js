@@ -5,8 +5,9 @@ let events=[];
 export function getEventList(){
   let res;
   callAPI('getEventlist',{},(msg)=>{
-    var arg = JSON.parse(msg);
-    res = arg.Response;
+    console.log(msg);
+    // var arg = JSON.parse(msg);
+    // res = arg.Response;
   });
   events = Object.keys(res).map(key=>{
     let item = res[key];
