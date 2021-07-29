@@ -4,10 +4,10 @@ const config = require('./config.json');
 const servicename = config.serviceName;
 
 export function callAPI(method, params, callback){
-    const API=`luna://${servicename}/${method}/`;
+    const API=`luna://${servicename}/`;
     return new LS2Request().send({
 		service: API,
-		method: 'callAPI',
+		method: method,
 		parameters: params,
 		onSuccess: (res) => {
 			callback(res);
