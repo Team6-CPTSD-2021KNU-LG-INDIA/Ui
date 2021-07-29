@@ -2,13 +2,11 @@ import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import MainPanel from '../views/MainPanel';
 import Detail from '../views/Detail';
 import { useState } from 'react';
-import {getEventList, makeDummy} from '../Modules/eventModule'
-
-makeDummy();
+import {getEventList} from '../Modules/eventModule'
 
 function App(props){
 	const [devices, setDevices] = useState([]);
-	const [events, setEvents] = useState(getEventList());
+	const [events, setEvents] = useState();//(getEventList());
 	const pageList=['calendar','detail','setting'];
 	const [page, setPage] = useState({
 		path:['calendar'],
