@@ -1,27 +1,27 @@
-import callAPI from './webosModule'
+import {callAPI} from './webosModule';
 
 let events=[];
 
 export function getEventList(){
   let res;
-  callAPI('getEventlist',{},(msg)=>{
+  callAPI('getEventlist',null,(msg)=>{
     console.log(msg);
     // var arg = JSON.parse(msg);
     // res = arg.Response;
   });
-  events = Object.keys(res).map(key=>{
-    let item = res[key];
-    if (item){
-      return {
-        device_id : item.device_id,
-        action_id : item.action_id,
-        title : item.title,
-        contents : item.contents,
-        start : item.start,
-        end : item.end,
-      }
-    }
-  });
+  // events = Object.keys(res).map(key=>{
+  //   let item = res[key];
+  //   if (item){
+  //     return {
+  //       device_id : item.device_id,
+  //       action_id : item.action_id,
+  //       title : item.title,
+  //       contents : item.contents,
+  //       start : item.start,
+  //       end : item.end,
+  //     }
+  //   }
+  // });
   return events;
 }
 
