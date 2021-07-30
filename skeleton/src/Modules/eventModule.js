@@ -3,14 +3,12 @@ import {callAPI} from './webosModule';
 let events=[];
 
 export function getEventList(){
-  let res;
-  callAPI('getEventlist',null,
+  callAPI('test',{},
   (msg)=>{
-    events[0] = 'success';
-    // var arg = JSON.parse(msg);
-    // res = arg.Response;
+    var arg = JSON.parse(msg);
+    //events = arg.Response;
+    console.log(arg.Response);
   },(msg)=>{
-    events[0] = 'fail';
   });
   // events = Object.keys(res).map(key=>{
   //   let item = res[key];
