@@ -4,10 +4,13 @@ let events=[];
 
 export function getEventList(){
   let res;
-  callAPI('getEventlist',null,(msg)=>{
-    console.log(msg);
+  callAPI('getEventlist',null,
+  (msg)=>{
+    events[0] = 'success';
     // var arg = JSON.parse(msg);
     // res = arg.Response;
+  },(msg)=>{
+    events[0] = 'fail';
   });
   // events = Object.keys(res).map(key=>{
   //   let item = res[key];
