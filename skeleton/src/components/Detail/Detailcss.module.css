@@ -1,19 +1,20 @@
 
 .Todotemplate{
-    height:1050px;
+    height:1200px;
     /* background:darkslategray; */
     width:450px;
-    margin-left:0px;
+    margin-left:600px;
     border-radius:20px;
     align-items: center;
     float:left;
-    border: solid 10px black;
-    box-shadow:0 0 40px #666;
+    border: solid 10px darkred;
+    box-shadow:0 0 20px #666;
+    
 }
 
 
 .titlen{
-    background: white;
+    background:#FCF6F5;
     color:black;
     margin:10px;
     border: solid 4px gray;
@@ -21,12 +22,11 @@
     height:2rem;
     font-size:1rem;
     text-align: center;
-    box-shadow:0 0 10px #666;
+    /*box-shadow:0 0 10px #666;*/
    
 }
 
 .content{
-
     background:white;
     color:black
 }

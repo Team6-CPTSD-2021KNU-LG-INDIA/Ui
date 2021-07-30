@@ -69,41 +69,41 @@ const Todolist=()=>{
         <div >
             <form onSubmit={add}>
 
-                <div >
-                    <div>
-                        start:   
-                        <input type="time" style={{border:"none",color: "blue",marginLeft:"50px",fontSize:"30px",}}
-                
-                        value={starttime_}
-                        onChange={e=>setSDate(e.target.value)}>        
-                        </input>                
-                        <img className={`${styles.alarm_img}`} src={alarm_img }width='40' height='40'  />
-                        <Checkbox> </Checkbox>
-                        <br></br>
+                <div>
+                    <div style={{fontSize:"20px", paddingLeft:"30px"}}>
+                        Start
+                            <input type="time" style={{border:"none",color: "brown",fontSize:"25px",paddingLeft:"30px"}}
+                                value={starttime_} onChange={e=>setSDate(e.target.value)}>        
+                            </input> 
+                    
+                            <img className={`${styles.alarm_img}`} src={alarm_img } width='30' height='30'/>
+                            <Checkbox> </Checkbox>
+                            <br></br>
                         
                     </div>
-                    <div>
-                        End:
-                        <input type="time" style={{border:"none",color: "blue",marginLeft:"50px",fontSize:"30px"} }
-                        
-                        value={endtime_}
-                        onChange={e=>setEDate(e.target.value)}>
-                        </input>
-                        <img className={`${styles.repeat_img}`} src={repeat_img} width='50' height='50'/>
-                        <Checkbox> </Checkbox>
-                        <br></br>
-                    </div>
+
+                    <div style={{fontSize:"20px", paddingLeft:"30px"}}>
+                            End
+                            <input type="time" style={{border:"none",color: "brown", fontSize:"25px", paddingLeft:"30px"}}
+                                value={endtime_} onChange={e=>setEDate(e.target.value)}>
+                            </input>
+
+                            <img className={`${styles.repeat_img}`} src={repeat_img} width='30' height='30'/>
+                            <Checkbox> </Checkbox>
+                            <br></br>
+                    </div> 
+                    <div calssName={`${styles.input_}`}>
+                    
+                    <textarea type="text"  placeholder="content" value={content_} cols="50" rows="4" style={{margin:"10px",paddingLeft:"30px"}}
+                        onChange={e=>setContent(e.target.value)}>
+
+                    </textarea>
+                    <button type="submit" style={{backgroundColor:'indianred'}}>Add</button>
                 </div>
 
-                <br></br>
-                <div calssName={`${styles.input_}`}>
-                    
-                    <textarea type="text"  placeholder="content" value={content_} cols="145" rows="4" style={{margin:"10px",}}
-                    onChange={e=>setContent(e.target.value)}>
-                    </textarea><br></br>
                 </div>
-                
-                <button type="submit">Add</button>
+
+
             </form>
                 {mapping}
         </div>

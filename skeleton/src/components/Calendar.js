@@ -10,7 +10,7 @@ function Calendar(props){
         <FullCalendar
           plugins={[dayGridPlugin,timeGridPlugin,interactionPlugin,listPlugin]}
           initialDate={props.page.args.initialDate}
-          eventColor='black'
+          eventColor='DarkRed'
           selectable='true'
           height='100%'
           headerToolbar='false'

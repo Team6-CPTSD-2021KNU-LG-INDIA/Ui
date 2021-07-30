@@ -7,7 +7,7 @@ import RightDetail from '../components/RightDetail/RightDetail';
 
 const Detail= (props)=>{
     return(
-        <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
+        <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(255, 255, 255)'}}>
             <Panel>
                 <Header onClose={()=>{
                 let path = props.page.path.slice(); path.pop();

@@ -14,7 +14,7 @@ makeDummy();
 function ListItem({devices,index,setDevices}){
   //const statusList=['info','rename','remove']
   const [status,setStatus] = useState(0)
-  let value=devices[index].name;
+
   switch(status){
     case(0):
     return(
@@ -45,17 +45,14 @@ function ListItem({devices,index,setDevices}){
             size='small'
             defaultValue={devices[index].name}
             placeholder='device name'
-            onComplete={(e)=>{
-              value=e.value;
+            onComplete={()=>{
+              //console.log(e.target.value);
             }}/>
         </Cell>
         <Cell size='40%'>
           <Item
             size='small'
-            onClick={(e)=>{
-              let temp = devices.slice();
-              temp[index].name=value;
-              setDevices(temp);
+            onClick={()=>{
               setStatus(0);
             }}
           >rename</Item>
@@ -115,7 +112,7 @@ function ListComponent(props){
           itemRenderer={({ index }) => (
             <ListItem index={index} devices={props.devices} setDevices={props.setDevices}/>
           )}
-          itemSize={500}
+          itemSize={60}
         />
       </Panel>
     );
@@ -130,7 +127,7 @@ function DeviceList(props){
 
   return(
     <div {...props}>
-        <Column align='center' style={{height:'100%', width:'100%'}}>
+        <Column align='center' style={{height:'90%', width:'100%'}}>
           <Cell shrink>
             <Heading showLine>Connected Devices</Heading>
           </Cell>

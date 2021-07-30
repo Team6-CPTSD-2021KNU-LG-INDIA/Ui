@@ -7,24 +7,37 @@
     color:black;
     box-shadow:0 0 20px #666;
 
+
 }
 .remove_btn{
     float:right;
     margin-right:10px;
     width:130px;
-    background: greenyellow;
+    background: indianred;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.add_btn{
+    float:right;
+    margin-right:10px;
+    width:130px;
+    background: indianred;
     text-align: center;
     border-radius: 10px;
 }
 
 .Right_template{
     
-    color:black;
-    height:1050px;
-    float:right;
-    width:2280px;
+    color: black;
+    height:1200px;
+    float:left;
+    width:1500px;
+    padding-left:50px;
+
+    margin-left: 300px;
     background: white;
-    border: 10px solid black;
+    border: 10px solid darkred;
     border-radius:20px;
     box-shadow:0 0 40px #666;
 }
@@ -33,12 +46,12 @@
     overflow-y: scroll;
     color:black;
     height:300px;
-    width:2200px;
+    width:1200px;
     background:none;
     border:1px solid black;
     border-radius:20px;
     margin:20px;
-    box-shadow:0 0 20px #666;
+    /*box-shadow:0 0 20px #666;*/
 }
 
 .Right_main{
@@ -46,7 +59,7 @@
     padding-top:5px;
     margin:30px;
     height:550px;
-    width:2200px;
+    width:1300px;
     background:none;
     border:1px solid black;
     border-radius:20px;
@@ -54,12 +67,13 @@
 }
 
 .alarm_img{
-    margin-left:600px;
+    margin-left:300px;
     margin-top:10px;
+    padding-top: 30px;
     padding-right:40px;
 }
 .repeat_img{
-    margin-left:600px;
+    margin-left:300px;
     margin-top:10px;
     padding-right:40px;
 }
