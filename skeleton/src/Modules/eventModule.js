@@ -6,23 +6,10 @@ export function getEventList(){
   callAPI('test',{},
   (msg)=>{
     var arg = JSON.parse(msg);
-    //events = arg.Response;
-    console.log(arg.Response);
+    events = arg.Response;
   },(msg)=>{
   });
-  // events = Object.keys(res).map(key=>{
-  //   let item = res[key];
-  //   if (item){
-  //     return {
-  //       device_id : item.device_id,
-  //       action_id : item.action_id,
-  //       title : item.title,
-  //       contents : item.contents,
-  //       start : item.start,
-  //       end : item.end,
-  //     }
-  //   }
-  // });
+  
   return events;
 }
 
