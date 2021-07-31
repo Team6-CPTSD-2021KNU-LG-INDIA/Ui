@@ -2,14 +2,25 @@ import {callAPI} from './webosModule';
 
 let events=[];
 
-export function getEventList(){
-  callAPI('test',{},
+export function loadEventList(setEvents){
+  callAPI('getEventlist',{},
   (msg)=>{
-    var arg = JSON.parse(msg);
-    events = arg.Response;
+    events = msg.Response;
+    events.forEach(event=>{
+      event.start = new Date(event.start);
+      event.end = new Date(event.end);
+    });
+    setEvents(events);
   },(msg)=>{
+    console.log(msg);
   });
-  
+}
+
+export function getEventList(){
+  return events;
+}
+
+export function makeValidEvents(srcList,starttime, endtime){
   return events;
 }
 
