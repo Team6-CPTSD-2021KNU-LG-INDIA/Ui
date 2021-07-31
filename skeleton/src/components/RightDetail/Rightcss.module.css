@@ -2,9 +2,9 @@
 
 .Right_template{
     color:black;
-    height:1050px;
+    height:100%;
     float:right;
-    width:2280px;
+    width:80%;
     background: white;
     border: 10px solid black;
     border-radius:20px;

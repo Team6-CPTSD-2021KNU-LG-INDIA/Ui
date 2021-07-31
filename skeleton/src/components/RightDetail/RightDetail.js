@@ -3,9 +3,7 @@ import styles from './Rightcss.module.css'
 import Right_Elc from './Right_Elc';
 import Right_Main from './Right_main';
 import { getDevices} from '../../Modules/iotModule';
-
-import Todolist from '../Detail/Todolist';
-
+import Todolists from './Todolists';
 
 
 const RightDetail =(props)=>{
@@ -19,8 +17,10 @@ const RightDetail =(props)=>{
             
             </Right_Elc>
             
-            <Right_Main  events={props.events} page={props.page}>
-                    
+            <Right_Main  events={props.events} page={props.page} >
+                    <Todolists>
+
+                    </Todolists>
             </Right_Main>
 
         </div>

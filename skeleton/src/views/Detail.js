@@ -11,6 +11,7 @@ const Detail= (props)=>{
     return(
         <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
             <Panel>
+                
                 <Header onClose={()=>{
                 let path = props.page.path.slice(); path.pop();
                 path.push('calendar');
@@ -26,6 +27,7 @@ const Detail= (props)=>{
                     </RightDetail>
             
                 </Header>
+                
                 </Panel>
               </Row>
         

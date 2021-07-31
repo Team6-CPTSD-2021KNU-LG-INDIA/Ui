@@ -1,5 +1,5 @@
 import {useRef, useState} from 'react';
-import Todoitem from './Todoitem';
+import Todoitem from '../Detail/Todoitem';
 import styles from './Rightcss.module.css'
 import alarm_img from '../image/alarm.png'
 import repeat_img from '../image/repeat.png'
@@ -7,7 +7,7 @@ import Checkbox from '@enact/sandstone/Checkbox';
 import Todo from '../Detail/Todo';
 
 
-const Todolist=(props)=>{
+const Todolists=(props)=>{
 
     const [starttime_,setSDate]=useState();
     const [endtime_,setEDate]=useState();
@@ -95,7 +95,7 @@ const Todolist=(props)=>{
                 <br></br>
                 <div calssName={`${styles.input_}`}>
                     
-                    <textarea type="text"  value={""} cols="145" rows="4" style={{margin:"10px",}}
+                    <textarea type="text"  value={""} cols="70" rows="4" style={{margin:"10px",}}
                     onChange={e=>setContent(e.target.value)}>
                     </textarea><br></br>
                 </div>
@@ -109,4 +109,4 @@ const Todolist=(props)=>{
 
 
 
-export default Todolist;
+export default Todolists;

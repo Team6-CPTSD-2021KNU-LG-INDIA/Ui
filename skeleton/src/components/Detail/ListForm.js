@@ -50,7 +50,7 @@ const ListForm = ({add})=>
                 onChange={e=>setContent(e.target.value)}>
                 </input><br></br>
 
-                <button type="submit">Add</button>  
+                <button type="submit"  style={{border:"white",background:"none"}}>Add</button>  
             </form>
     );
 };
