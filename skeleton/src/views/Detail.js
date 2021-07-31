@@ -1,11 +1,13 @@
 import {Panel,Header} from '@enact/sandstone/Panels';
 import Todo from '../components/Detail/Todo';
-
+import { useState } from 'react';
 import Scroller from '@enact/sandstone/Scroller';
 import {Row, Cell} from '@enact/ui/Layout';
 import RightDetail from '../components/RightDetail/RightDetail';
 
+
 const Detail= (props)=>{
+
     return(
         <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
             <Panel>
@@ -15,18 +17,13 @@ const Detail= (props)=>{
                 props.movePage(path,{initialDate:props.page.args.targetDate});
             }} title={props.page.args.targetDate.toString()} >
 
-                <Cell size='30%'>
-                      <Todo>
-                                                    
-                      </Todo>
-                </Cell> 
-
-                <Cell size='70%'>
-                    <RightDetail>
-
+                    <Todo events={props.events} page={props.page}  >
+                    
+                    </Todo>
+                   
+                    <RightDetail events={props.events} page={props.page} >                              
+                   
                     </RightDetail>
-                </Cell>  
-             
             
                 </Header>
                 </Panel>

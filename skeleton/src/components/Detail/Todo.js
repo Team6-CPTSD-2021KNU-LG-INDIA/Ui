@@ -1,24 +1,34 @@
 import React,{useState} from 'react';
 import styles from './Detailcss.module.css' 
-import TodoInsert from './TodoInsert';
-import Todolist from '../RightDetail/Todolist';
-import Todoitem from '../RightDetail/Todoitem';
-const Todo =(props)=>{
-    
+import Todolist from './Todolist';
+
+const Todo =(props ,{isShow})=>{
+
 
     return(
         <div className={`${styles.Todotemplate} `}>
-            <div className={`${styles.titlen}` }> 
-                Today-List
-            </div>
-            
-             <div className={`${styles.content},`}>
-                
-            </div>
+         
+                {/* <FullCalendar
+                    plugins={[listPlugin]}
+                    initialDate={props.page.args.targetDate}
+                    initialView='listDay'
+                    height='100%'
+                    headerToolbar='false'
+                    footerToolbar='false'
+                    nowIndicator= 'true'
+                    eventOverlap='true'
+                    events={props.events}
+                    style={{fontsize:"12px"}}
+                    >
+                </FullCalendar> */}
+           
+            <div className={`${styles.list}`}>
+                <Todolist  events={props.events} page={props.page} > 
 
-            
-    
+                </Todolist>
+                </div>
         </div>
+        
     );
 }
 

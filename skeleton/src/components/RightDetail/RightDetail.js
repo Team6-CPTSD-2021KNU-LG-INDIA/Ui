@@ -4,21 +4,22 @@ import Right_Elc from './Right_Elc';
 import Right_Main from './Right_main';
 import { getDevices} from '../../Modules/iotModule';
 
+import Todolist from '../Detail/Todolist';
 
 
-const RightDetail =()=>{
 
-    let temp=[];
-    temp=getDevices();
+const RightDetail =(props)=>{
+
+   
     return(
     
         <div className={`${styles.Right_template}`}>
           
             <Right_Elc>
-              {temp}
+            
             </Right_Elc>
             
-            <Right_Main >
+            <Right_Main  events={props.events} page={props.page}>
                     
             </Right_Main>
 

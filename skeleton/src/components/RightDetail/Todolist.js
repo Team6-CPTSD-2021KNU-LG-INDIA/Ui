@@ -7,7 +7,7 @@ import Checkbox from '@enact/sandstone/Checkbox';
 import Todo from '../Detail/Todo';
 
 
-const Todolist=()=>{
+const Todolist=(props)=>{
 
     const [starttime_,setSDate]=useState();
     const [endtime_,setEDate]=useState();
@@ -26,12 +26,10 @@ const Todolist=()=>{
         }));
     }
 
-    const mapping=items.length? items.map(item=>{
+    const mapping=items.length ? items.map(item=>{
         
         return(
-
             <div>
-            
                 <Todoitem item={item} key = {item.id}
                 remove_item={remove_item}>
 
@@ -40,11 +38,7 @@ const Todolist=()=>{
         );
     }):"No schedule ";
 
-    // {useEffect(()=>{
-    //     console.log('render');
 
-    // });}
-    
     const nextId=useRef(2);
 
     const add=(e)=>{
@@ -70,19 +64,22 @@ const Todolist=()=>{
             <form onSubmit={add}>
 
                 <div >
+    
                     <div>
                         start:   
                         <input type="time" style={{border:"none",color: "blue",marginLeft:"50px",fontSize:"30px",}}
-                
-                        value={starttime_}
-                        onChange={e=>setSDate(e.target.value)}>        
+                        value={props.event}
+                        onChange={e=>setSDate(e.target.value)}
+                        
+                        >        
                         </input>                
                         <img className={`${styles.alarm_img}`} src={alarm_img }width='40' height='40'  />
                         <Checkbox> </Checkbox>
+                        
                         <br></br>
                         
                     </div>
-                    <div>
+                    <div >
                         End:
                         <input type="time" style={{border:"none",color: "blue",marginLeft:"50px",fontSize:"30px"} }
                         
@@ -98,14 +95,14 @@ const Todolist=()=>{
                 <br></br>
                 <div calssName={`${styles.input_}`}>
                     
-                    <textarea type="text"  placeholder="content" value={content_} cols="145" rows="4" style={{margin:"10px",}}
+                    <textarea type="text"  value={""} cols="145" rows="4" style={{margin:"10px",}}
                     onChange={e=>setContent(e.target.value)}>
                     </textarea><br></br>
                 </div>
                 
                 <button type="submit">Add</button>
             </form>
-                {mapping}
+           
         </div>
     );
 }

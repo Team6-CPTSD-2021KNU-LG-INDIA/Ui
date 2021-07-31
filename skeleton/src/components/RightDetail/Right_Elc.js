@@ -17,14 +17,11 @@ const Right_Elc = (props) => {
   const tempArr = getDevices();
   
   return (
-    <div className={`${styles.Right_elec}`}>
-     
-      
+    <div className={`${styles.Right_elec}`}>     
+       
         {tempArr.map((item) => (
           <Elc_child deviceInfo={item} index={value}  number={number} increase={increase}/>
         ))}
-      
-
     </div>
   );
 };

@@ -1,24 +1,6 @@
 
-.TodoItem{
-    margin-top:10px;
-    font-size:3px;
-    border: solid 4px black;
-    border-radius:20px;
-    color:black;
-    box-shadow:0 0 20px #666;
-
-}
-.remove_btn{
-    float:right;
-    margin-right:10px;
-    width:130px;
-    background: greenyellow;
-    text-align: center;
-    border-radius: 10px;
-}
 
 .Right_template{
-    
     color:black;
     height:1050px;
     float:right;
@@ -45,7 +27,7 @@
     color:black;
     padding-top:5px;
     margin:30px;
-    height:550px;
+    height:680px;
     width:2200px;
     background:none;
     border:1px solid black;

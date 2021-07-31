@@ -4,9 +4,12 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 
+import Button from '@enact/sandstone/Button';
+
 function Calendar(props){
     return(
       <div {...props}>
+       
         <FullCalendar
           plugins={[dayGridPlugin,timeGridPlugin,interactionPlugin,listPlugin]}
           initialDate={props.page.args.initialDate}
@@ -22,7 +25,8 @@ function Calendar(props){
             start: 'dayGridMonth,timeGridWeek,timeGridDay',//listDay
             center: 'title',
             end: 'today prev,next',
-          }}
+          }
+        }
           dateClick={function(info){
             let path = props.page.path.slice(); path.pop();
             path.push('detail');
