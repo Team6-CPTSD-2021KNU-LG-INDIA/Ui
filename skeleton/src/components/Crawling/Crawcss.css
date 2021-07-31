@@ -8,6 +8,10 @@
   margin-left:10px;
   font-size:10px;
   border:none;
-  background:none;
+  background:whitesmoke;
+  border-radius: 180px;
 
+}
+.button1:hover{
+  background:skyblue;
 }

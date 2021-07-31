@@ -7,10 +7,32 @@ import listPlugin from '@fullcalendar/list';
 import Button from '@enact/sandstone/Button';
 
 function Calendar(props){
-    return(
+  
+
+  return(
+  
       <div {...props}>
        
         <FullCalendar
+          customButtons={{
+            customButton1:{
+              text:'SEARCH',
+              click:function(){
+                let path = props.page.path.slice(); path.pop();
+                path.push('crawling');
+                props.movePage(path,{});
+            },
+            
+          },
+          customButton2:{
+            text:'REPEAT',
+            click:function(){
+              let path = props.page.path.slice(); path.pop();
+              path.push('setting');
+              props.movePage(path,{});
+          }
+        }
+        }}
           plugins={[dayGridPlugin,timeGridPlugin,interactionPlugin,listPlugin]}
           initialDate={props.page.args.initialDate}
           eventColor='black'
@@ -22,11 +44,11 @@ function Calendar(props){
           dayMaxEvents={1}
           events={props.events}
           footerToolbar={{
-            start: 'dayGridMonth,timeGridWeek,timeGridDay',//listDay
+            start: 'customButton1,customButton2',//listDay
             center: 'title',
             end: 'today prev,next',
-          }
-        }
+
+        }}
           dateClick={function(info){
             let path = props.page.path.slice(); path.pop();
             path.push('detail');
@@ -34,6 +56,7 @@ function Calendar(props){
               targetDate: info.date,
             })
           }}
+        
         />
       </div>
     )

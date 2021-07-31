@@ -18,9 +18,7 @@ const RightDetail =(props)=>{
             </Right_Elc>
             
             <Right_Main  events={props.events} page={props.page} >
-                    <Todolists>
-
-                    </Todolists>
+            
             </Right_Main>
 
         </div>

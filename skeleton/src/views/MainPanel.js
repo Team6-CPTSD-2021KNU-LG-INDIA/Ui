@@ -16,6 +16,7 @@ function MainPanel({depth,pageList,page,movePage, devices, setDevices, events, s
 						movePage={movePage} page={page} pageList={pageList}
 						events={events} setEvents={setEvents}
 					/>
+					
 				</Cell>
 				<Cell size='25%'>
 					<Sidebar

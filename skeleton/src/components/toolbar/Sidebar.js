@@ -24,23 +24,7 @@ function Sidebar(props){
           </Cell>
           <Cell size="20%" style={{backgroundColor:''}}>
             <BodyText>weather</BodyText>            
-            <div style={{}}>
-          <Button size="small" icon="home" style={{height:"30px",fontSize:"20px",float:"right",marginTop:""} }
-          onClick={function(){
-            let path = props.page.path.slice(); path.pop();
-            path.push('setting');
-            props.movePage(path,{})}
-          }
-          >  repeat </Button>    
-        
-         <Button size="small" icon="home" style={{height:"30px",fontSize:"20px",float:"right",marginTop:""} }
-          onClick={function(){
-            let path = props.page.path.slice(); path.pop();
-            path.push('crawling');
-            props.movePage(path,{})}
-          }
-          >  Crawling </Button>    
-         </div>
+         
           </Cell>
          
         </Column>
