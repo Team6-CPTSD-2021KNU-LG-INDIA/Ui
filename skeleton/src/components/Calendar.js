@@ -3,6 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
+import {makeValidEvents} from '../Modules/eventModule'
 
 import Button from '@enact/sandstone/Button';
 
@@ -42,7 +43,7 @@ function Calendar(props){
           nowIndicator= 'true'
           eventOverlap='true'
           dayMaxEvents={1}
-          events={props.events}
+          events={makeValidEvents(props.events,null,null)}
           footerToolbar={{
             start: 'customButton1,customButton2',//listDay
             center: 'title',

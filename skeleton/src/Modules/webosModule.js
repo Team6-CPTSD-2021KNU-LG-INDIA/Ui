@@ -2,16 +2,19 @@ import LS2Request from '@enact/webos/LS2Request';
 
 const config = require('./config.json');
 const servicename = config.serviceName;
+const LS2 = new LS2Request();
 
-export function callAPI(method, params, callback){
-    const API=`luna://${servicename}/${method}/`;
-    return new LS2Request().send({
+export function callAPI(method, params, onSuccess, onFailure){
+    const API=`luna://${servicename}/`;
+	return LS2.send({
 		service: API,
-		method: 'callAPI',
+		method: method,
 		parameters: params,
 		onSuccess: (res) => {
-			callback(res);
+			onSuccess(res);
 		},
-		onFailure: (res) => console.error(res),
+		onFailure: (res) => {
+			onFailure(res);
+		}
 	});
 }
