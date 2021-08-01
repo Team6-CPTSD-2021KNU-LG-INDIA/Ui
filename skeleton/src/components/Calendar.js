@@ -5,13 +5,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import {makeValidEvents} from '../Modules/eventModule'
 
-import Button from '@enact/sandstone/Button';
-
 function Calendar(props){
-  
-
   return(
-  
       <div {...props}>
        
         <FullCalendar
