@@ -81,21 +81,35 @@ class Weather_Info extends React.Component {
       );
 
       const response = await api_call.json();
+      
+      try{
+        this.setState({
+          // city: `${response.name}, ${response.sys.country}`,
+          country: response.sys.country,
+          city: `${response.name}`,
+          main: response.weather[0].main,
+          celsius: this.calCelsius(response.main.temp),
+          temp_max: this.calCelsius(response.main.temp_max),
+          temp_min: this.calCelsius(response.main.temp_min),
+          description: response.weather[0].description,
+          error: false
+        });
 
-      this.setState({
-        // city: `${response.name}, ${response.sys.country}`,
-        country: response.sys.country,
-        city: `${response.name}`,
-        main: response.weather[0].main,
-        celsius: this.calCelsius(response.main.temp),
-        temp_max: this.calCelsius(response.main.temp_max),
-        temp_min: this.calCelsius(response.main.temp_min),
-        description: response.weather[0].description,
-        error: false
-      });
-
-      // seting icons
-      this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+        // seting icons
+        this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+      }catch(err){
+        this.setState({
+          city: undefined,
+          country: undefined,
+          icon: undefined,
+          main: undefined,
+          celsius: undefined,
+          temp_max: null,
+          temp_min: null,
+          description: "",
+          error: false
+        });
+      }
 
       console.log(response);
     } else {
