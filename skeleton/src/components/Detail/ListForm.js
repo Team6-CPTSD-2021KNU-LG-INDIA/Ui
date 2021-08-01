@@ -2,7 +2,7 @@ import {React,useState,useRef} from 'react';
 
 const ListForm = ({add})=>
 {
-
+   
     const [starttime_,setSDate]=useState();
     const [endtime_,setEDate]=useState();
     const [content_,setContent]=useState();
@@ -34,7 +34,7 @@ const ListForm = ({add})=>
    
     return(
      
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} >
 
                 <input type="time"  style={{border:"none",color: "blue",fontSize:"10px",}}
                 value={starttime_}

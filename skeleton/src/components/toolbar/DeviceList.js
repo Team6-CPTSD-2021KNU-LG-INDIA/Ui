@@ -132,7 +132,7 @@ function DeviceList(props){
     <div {...props}>
         <Column align='center' style={{height:'100%', width:'100%'}}>
           <Cell shrink>
-            <Heading showLine>Connected Devices</Heading>
+            {/* <Heading showLine>Connected Devices</Heading> */}
           </Cell>
           <Cell>
             <ListComponent

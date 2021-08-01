@@ -6,12 +6,11 @@ import ListForm from './ListForm';
 
 const Todolist=(props)=>{
 
-
+    const[show,setShowed]=useState(false);
     const [items,setItem]=useState([
         {id:1,start_time:"12:00",end_time:"20:00",content:"Go Library"}
     
     ]);
-
 
     const remove_item=(id)=>{
        
@@ -52,14 +51,24 @@ const Todolist=(props)=>{
 
    
     return(
-        <div >
-            day list
-            <ListForm add={add}>
+        <div>
+            <div>
+                <button onClick={(e) => setShowed(false) } style={{borderRadius:"180px",
+                width:"35px",height:"35px",fontSize:"20px",float:"left"}}>+</button>
+                <button onClick={(e) => setShowed(true) }style={{borderRadius:"180px",
+                width:"35px",height:"35px",fontSize:"20px",float:"right"}}>-</button>
+            </div>
+            <br></br>
+            <br></br>
+           
+            <div style={show ? { display: "none" } : { display: "block" }}>     
+            <ListForm add={add} >
 
             </ListForm>
-            
+            </div>
               {mapping}
             
+         
         </div>
     );
     

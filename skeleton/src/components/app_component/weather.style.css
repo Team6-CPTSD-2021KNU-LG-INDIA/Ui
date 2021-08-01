@@ -1,0 +1,35 @@
+.container {
+    margin-top: 3px;
+  }
+  
+  .container input,
+  .container ::-webkit-input-placeholder {
+    color: black !important; /*City, Country 폰트 색*/
+  }
+  .container input:focus {
+    background-color: cornsilk; /*City, Country 입력 할 때, 반응하는 배경색*/
+    box-shadow: none !important;
+    border: none;
+    border-width: 100px;
+    border-bottom: 5px solid Darkred;
+  }
+  
+  form {
+    margin-top: -60px;
+ 
+  }
+  
+  form input[name="city"],
+  form input[name="country"] {
+    background-color: transparent;
+    color: black;
+    /* width:200px; */
+    height: 100px;
+    text-align: center;
+    /* margin-left: 50%; */
+    border: none;
+    border-bottom: 5px solid Darkred;
+    border-radius: 0;
+  }
+  
+  
