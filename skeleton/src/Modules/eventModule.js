@@ -19,7 +19,7 @@ export function loadEventList(setEvents){
 export function addEvent(event,setEvents){
   callAPI('addEvent',event,
   (msg)=>{
-    loadEventList(loadEventList);
+    loadEventList(setEvents);
   },(msg)=>{
     console.log(msg);
   });
