@@ -4,13 +4,11 @@ import Detail from '../views/Detail';
 import Setting_P from '../views/setting_P';
 import Crawling from '../views/Crawling';
 import { useState } from 'react';
-//import {getEventList} from '../Modules/eventModule'
-/*getEventList()*/
+
 function App(props){
 	const [devices, setDevices] = useState([]);
 	const [events, setEvents] = useState([]);
 	const pageList=['calendar','detail','setting','crawling'];
-
 	const [page, setPage] = useState({
 		path:['calendar'],
 		args:{
