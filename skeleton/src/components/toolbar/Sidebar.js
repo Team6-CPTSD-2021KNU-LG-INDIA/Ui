@@ -1,7 +1,6 @@
 import {Column, Cell} from '@enact/ui/Layout';
 import BodyText from '@enact/sandstone/BodyText';
 import DeviceList from './DeviceList';
-import Button from '@enact/sandstone/Button';
 import Weather_Info from '../Weather';
 function Sidebar(props){
   

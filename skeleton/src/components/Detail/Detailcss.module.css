@@ -12,7 +12,6 @@
 }
 
 .list{
-    overflow-y: scroll;
     background: white;
     color:black;
     height: 1050px;

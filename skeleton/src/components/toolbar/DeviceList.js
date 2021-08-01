@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Row, Cell, Column } from '@enact/ui/Layout';
-import Heading from '@enact/sandstone/Heading';
 import Button from '@enact/sandstone/Button';
 import Panel from "@enact/sandstone/Panels";
 import BodyText from '@enact/sandstone/BodyText';
@@ -115,7 +114,7 @@ function ListComponent(props){
           itemRenderer={({ index }) => (
             <ListItem index={index} devices={props.devices} setDevices={props.setDevices}/>
           )}
-          itemSize={500}
+          itemSize={50}
         />
       </Panel>
     );
