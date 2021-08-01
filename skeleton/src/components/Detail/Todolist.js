@@ -3,6 +3,13 @@ import {useRef, useState} from 'react';
 import Button from '@enact/sandstone/Button';
 import VirtualList from "@enact/sandstone/VirtualList";
 
+const test = [{
+    device_id:"1",
+    title:"1",
+    start:new Date(),
+    end:new Date(),
+}];
+
 const Todolist=(props)=>{
     return(
         <div>
@@ -20,11 +27,12 @@ const Todolist=(props)=>{
                             size='large'
                             onClick={()=>{
                             }}
-                        >{props.events[index].title}</Button>
-                        <div>{props.events[index].start}-{props.events[index].end}</div>
+                        >{props.events[index].title+""}</Button>
+                        <div>{props.events[index].start.toLocaleString()}
+                        -{props.events[index].end.toLocaleString()}</div>
                     </div>
                 )}
-                itemSize={100}
+                itemSize={120}
             />
         </div>
     );

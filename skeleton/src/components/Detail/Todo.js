@@ -5,8 +5,8 @@ import Todolist from './Todolist';
 const Todo =(props)=>{
     return(
         <div>
-            {/* <Todolist  events={props.events} page={props.page}> 
-            </Todolist> */}
+            <Todolist  events={props.events} page={props.page}> 
+            </Todolist>
         </div>
         
     );
