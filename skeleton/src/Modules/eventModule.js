@@ -16,10 +16,12 @@ export function loadEventList(setEvents){
   });
 }
 
-export function addEvent(event){
+export function addEvent(event,setEvents){
   callAPI('addEvent',event,
   (msg)=>{
+    loadEventList(loadEventList);
   },(msg)=>{
+    console.log(msg);
   });
 }
 
@@ -31,7 +33,7 @@ export function makeValidEvents(starttime, endtime){
   return events;
 }
 
-export class eventInfo{
+export class EventInfo{
   constructor(device_id, action_id, title, contents, start, end){
       this.device_id = device_id;
       this.action_id = action_id;

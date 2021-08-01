@@ -12,7 +12,7 @@
 }
 .Right_elec{
     
-    overflow-y: scroll;
+    overflow-y: auto;
     color:black;
     height:300px;
     width:2200px;
@@ -25,7 +25,7 @@
 
 .Right_main{
     color:black;
-    padding-top:5px;
+    padding-top:50px;
     margin:30px;
     height:680px;
     width:2200px;

@@ -4,10 +4,10 @@ import { Panel,Header } from '@enact/sandstone/Panels';
 import Crawtemplate from '../components/Crawling/Crawtemplate';
 import Scroller from '@enact/ui/Scroller';
 import { useState } from 'react/cjs/react.development';
-const Crawling =(props)=>{
-    
-    
 
+
+const Crawling =(props)=>{
+     
     return (
 
         

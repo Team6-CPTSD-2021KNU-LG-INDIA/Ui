@@ -5,6 +5,8 @@ import Setting_P from '../views/setting_P';
 import Crawling from '../views/Crawling';
 import { useState } from 'react';
 import {getEventList, loadEventList} from '../Modules/eventModule'
+
+
 function App(props){
 	const [devices, setDevices] = useState([]);
 	const [events, setEvents] = useState([]); loadEventList(setEvents);

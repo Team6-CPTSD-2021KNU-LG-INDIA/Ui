@@ -9,9 +9,8 @@ const Todolist=(props)=>{
     return(
         <div>
             <Button
-                size="small"
+                size='large'
                 onClick={()=>{
-                    props.setFormdata(null);
                 }}
             >ADD</Button>
             <VirtualList
@@ -20,9 +19,8 @@ const Todolist=(props)=>{
                     <div>
                         <Button
                             index={index}
-                            size="small"
+                            size='large'
                             onClick={()=>{
-                                props.setFormdata(props.events[index]);
                             }}
                         >{props.events[index].title}</Button>
                         <div>{props.events[index].start}-{props.events[index].end}</div>
