@@ -20,7 +20,9 @@ const RightDetail =(props)=>{
              eventitem.contents = obj.target.value;
          }}
          ></textarea>)
-    const title = (<input 
+    const title = (
+         
+        <input 
         type="text" placeholder="Event title"
         onChange={(obj)=>{
             eventitem.title = obj.target.value;

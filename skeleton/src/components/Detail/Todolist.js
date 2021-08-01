@@ -1,5 +1,5 @@
 import {useRef, useState} from 'react';
-import Todoitem from './Todoitem';
+
 import Button from '@enact/sandstone/Button';
 import VirtualList from "@enact/sandstone/VirtualList";
 
