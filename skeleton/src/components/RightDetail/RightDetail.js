@@ -1,7 +1,7 @@
 import {React} from 'react';
 import { getDevices } from '../../Modules/iotModule'
 import {Column, Row, Cell} from '@enact/ui/Layout';
-import {EventInfo,addEvent} from '../../Modules/eventModule';
+import {EventInfo,addEvent,getEventList} from '../../Modules/eventModule';
 import Scroller from '@enact/sandstone/Scroller';
 import TimePicker from '@enact/sandstone/TimePicker';
 import Dropdown from '@enact/sandstone/Dropdown';
@@ -85,7 +85,7 @@ const RightDetail =(props)=>{
             </Cell>
             <Cell size='7%'>
                 <button type="button" onClick={()=>{
-                    addEvent(eventitem, props.setEvents);
+                    addEvent(eventitem,props.setEvents);
                 }}>Add</button>
             </Cell>
         </Column>
