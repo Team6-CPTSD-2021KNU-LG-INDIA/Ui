@@ -17,7 +17,7 @@ const RightDetail =(props)=>{
         )
     }
     else{
-        eventitem = props.data.slice();
+        eventitem = JSON.parse(JSON.stringify(props.data));
     }
     console.log(eventitem);
     const devices = getDevices();

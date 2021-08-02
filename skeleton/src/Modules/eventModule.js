@@ -17,15 +17,17 @@ export function loadEventList(Callback){
 export function addEvent(event,setEvents){
   callAPI('addEvent',event,
   (msg)=>{
-    console.log(msg);
-    setEvents(msg.Response);
+    setEvents(msg.Response.slice());
   },(msg)=>{
     console.log(msg);
   });
 }
 
 export function makeValidEvents(events, starttime, endtime){
-  return events;
+  if (events !== false)
+    return events.slice();
+  else 
+    return false;
 }
 
 export class EventInfo{

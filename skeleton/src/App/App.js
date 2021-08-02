@@ -18,11 +18,9 @@ function App(){
 	});
 	if (events === false){
 		let timer = setInterval(() => {
-			console.log('inter');
 			loadEventList((res)=>{
-				console.log(res);
 				if(res !== false){
-					setEvents(res);
+					setEvents(res.slice());
 					clearInterval(timer);
 				}
 			});
@@ -57,7 +55,6 @@ function App(){
 		);
 		case('crawling'):
 		return (
-			
 			<Crawling depth={0} devices={devices}
 			pageList={pageList} page={page} movePage={movePage}
 			events={events} setEvents={setEvents}>
