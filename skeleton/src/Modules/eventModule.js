@@ -5,7 +5,6 @@ export async function loadEventList(){
   let events = [];
   await callAPI('getEventlist',{},
     (msg)=>{
-      console.log('test');
       events = msg.Response;
       events.forEach(event=>{
         event.start = new Date(event.start);

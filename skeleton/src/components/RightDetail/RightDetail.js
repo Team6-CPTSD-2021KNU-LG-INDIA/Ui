@@ -10,7 +10,7 @@ import Dropdown from '@enact/sandstone/Dropdown';
 const RightDetail =(props)=>{
     const devices = getDevices();
     const eventitem = new EventInfo(
-        null,null,null,null,
+        null,null,"",null,
         props.page.args.targetDate.toUTCString(),
         props.page.args.targetDate.toUTCString()
     )

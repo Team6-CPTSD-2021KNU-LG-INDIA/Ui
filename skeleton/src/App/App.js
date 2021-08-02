@@ -3,12 +3,12 @@ import MainPanel from '../views/MainPanel';
 import Detail from '../views/Detail';
 import Setting_P from '../views/setting_P';
 import Crawling from '../views/Crawling';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {loadEventList} from '../Modules/eventModule'
 
 function App(props){
 	const [devices, setDevices] = useState([]);
-	const [events, setEvents] = useState(null);
+	const [events, setEvents] = useState(false);
 	const pageList=['calendar','detail','setting','crawling'];
 	const [page, setPage] = useState({
 		path:['calendar'],
@@ -16,12 +16,14 @@ function App(props){
 			initialDate:new Date(),
 		},
 	});
-	if (!events){
-		loadEventList(events).then(res=>{
-			console.log(res);
-			setEvents(res);
-		});
-	}
+
+	useEffect(()=>{
+		if(!events){
+			loadEventList(events).then(res=>{
+				setEvents(res);
+			});
+		}
+	});
 	
 	function movePage(path, args){
 		setPage({
