@@ -85,7 +85,7 @@ const RightDetail =(props)=>{
             </Cell>
             <Cell size='7%'>
                 <button type="button" onClick={()=>{
-                    addEvent(eventitem,props.setEvents);
+                    addEvent(eventitem, props.setEvents);
                 }}>Add</button>
             </Cell>
         </Column>

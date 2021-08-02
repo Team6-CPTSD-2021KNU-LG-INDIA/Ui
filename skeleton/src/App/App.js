@@ -18,6 +18,7 @@ function App(props){
 	});
 	if (!events){
 		loadEventList(events).then(res=>{
+			console.log(res);
 			setEvents(res);
 		});
 	}

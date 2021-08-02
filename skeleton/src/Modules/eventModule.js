@@ -1,9 +1,11 @@
 import {callAPI} from './webosModule';
 
 export async function loadEventList(){
+  console.log('list');
   let events = [];
   await callAPI('getEventlist',{},
     (msg)=>{
+      console.log('test');
       events = msg.Response;
       events.forEach(event=>{
         event.start = new Date(event.start);
@@ -18,9 +20,8 @@ export async function loadEventList(){
 export function addEvent(event,setEvents){
   callAPI('addEvent',event,
   (msg)=>{
-    loadEventList(null).then(res=>{
-      setEvents(res);
-    });
+    console.log(msg);
+    setEvents(msg.Response)
   },(msg)=>{
     console.log(msg);
   });
