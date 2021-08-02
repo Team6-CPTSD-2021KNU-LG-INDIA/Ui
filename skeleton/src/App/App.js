@@ -20,7 +20,7 @@ function App(props){
 	useEffect(()=>{
 		if(!events){
 			loadEventList(events).then(res=>{
-				setEvents(res);
+				setEvents(res.slice());
 			});
 		}
 	});

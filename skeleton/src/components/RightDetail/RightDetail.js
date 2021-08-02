@@ -1,4 +1,4 @@
-import {React} from 'react';
+import {React, useEffect} from 'react';
 import { getDevices } from '../../Modules/iotModule'
 import {Column, Row, Cell} from '@enact/ui/Layout';
 import {EventInfo,addEvent,getEventList} from '../../Modules/eventModule';
@@ -8,32 +8,54 @@ import Dropdown from '@enact/sandstone/Dropdown';
 
 
 const RightDetail =(props)=>{
+    let eventitem;
+    if (props.data === null){
+        eventitem = new EventInfo(
+            null,null,"event",null,
+            props.page.args.targetDate.toUTCString(),
+            props.page.args.targetDate.toUTCString()
+        )
+    }
+    else{
+        eventitem = props.data.slice();
+    }
+    console.log(eventitem);
     const devices = getDevices();
-    const eventitem = new EventInfo(
-        null,null,"",null,
-        props.page.args.targetDate.toUTCString(),
-        props.page.args.targetDate.toUTCString()
-    )
     const contents = (<textarea
          type="text"  cols="70" rows="4" 
+         defaultValue={eventitem.contents}
          onChange={(obj)=>{
              eventitem.contents = obj.target.value;
          }}
          ></textarea>)
     const title = (
-         
         <input 
         type="text" placeholder="Event title"
+        defaultValue={eventitem.title}
         onChange={(obj)=>{
             eventitem.title = obj.target.value;
         }}
         ></input>)
     const targetdevice=(
         <Dropdown
-            defaultSelected={0}
+            defaultSelected={(()=>{
+                if (eventitem.device_id == null){
+                    return 0;
+                }
+                for(let i=1; i<devices.length+1; i++){
+                    if (devices[i].id == eventitem.device_id){
+                        return i;
+                    }
+                }
+            })()}
             inline
             onSelect={({data,selected})=>{
-                eventitem.device_id = devices[selected].id;
+                if (selected == 0){
+                    eventitem.device_id = null;
+                }
+                else{
+                    eventitem.device_id = devices[selected-1].id;
+                }
             }}
             //title="Target Device"
         >
@@ -43,13 +65,13 @@ const RightDetail =(props)=>{
         </Dropdown>
     );
     const startTime=(<TimePicker
-        defaultValue={props.page.args.targetDate}
+        defaultValue={new Date(eventitem.start)}
         onChange={(data)=>{
             eventitem.start=data.value.toUTCString();
         }}
     ></TimePicker>);
     const endTime=(<TimePicker
-        defaultValue={props.page.args.targetDate}
+        defaultValue={new Date(eventitem.start)}
         onChange={(data)=>{
             eventitem.end=data.value.toUTCString();
         }}

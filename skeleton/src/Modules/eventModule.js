@@ -20,7 +20,7 @@ export function addEvent(event,setEvents){
   callAPI('addEvent',event,
   (msg)=>{
     console.log(msg);
-    setEvents(msg.Response)
+    setEvents(msg.Response.slice());
   },(msg)=>{
     console.log(msg);
   });
