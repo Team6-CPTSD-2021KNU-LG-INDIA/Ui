@@ -6,7 +6,7 @@ import Crawling from '../views/Crawling';
 import { useEffect, useState } from 'react';
 import {loadEventList} from '../Modules/eventModule'
 
-function App(props){
+function App(){
 	const [devices, setDevices] = useState([]);
 	const [events, setEvents] = useState(false);
 	const pageList=['calendar','detail','setting','crawling'];
@@ -16,15 +16,18 @@ function App(props){
 			initialDate:new Date(),
 		},
 	});
-
-	useEffect(()=>{
-		if(!events){
-			loadEventList(events).then(res=>{
-				setEvents(res.slice());
+	if (events === false){
+		let timer = setInterval(() => {
+			console.log('inter');
+			loadEventList((res)=>{
+				console.log(res);
+				if(res !== false){
+					setEvents(res);
+					clearInterval(timer);
+				}
 			});
-		}
-	});
-	
+		}, 100);
+	}
 	function movePage(path, args){
 		setPage({
 			path: path,

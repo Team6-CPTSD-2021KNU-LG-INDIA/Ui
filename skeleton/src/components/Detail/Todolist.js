@@ -5,7 +5,7 @@ import VirtualList from "@enact/sandstone/VirtualList";
 
 const Todolist=(props)=>{
     return(
-        <div>
+        <div {...props}>
             <Button
                 size='large'
                 onClick={()=>{

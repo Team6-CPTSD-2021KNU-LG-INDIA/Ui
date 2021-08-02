@@ -4,11 +4,21 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import {makeValidEvents} from '../Modules/eventModule'
+import { useEffect, useState } from 'react';
 
 function Calendar(props){
+  const [elist, setlist] = useState([]);
+
+  useEffect(()=>{
+    console.log('Cal');
+    console.log(props.events);
+    console.log(makeValidEvents(props.events,null,null));
+    setlist(makeValidEvents(props.events,null,null));
+    console.log(elist);
+  },[props.events]);
+
   return(
       <div {...props}>
-       
         <FullCalendar
           customButtons={{
             customButton1:{
@@ -38,7 +48,7 @@ function Calendar(props){
           nowIndicator= 'true'
           eventOverlap='true'
           dayMaxEvents={1}
-          events={makeValidEvents(props.events,null,null)}
+          events={elist}
           footerToolbar={{
             start: 'customButton1,customButton2',//listDay
             center: 'title',
