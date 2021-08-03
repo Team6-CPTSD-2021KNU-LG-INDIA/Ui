@@ -3,19 +3,13 @@ import {useRef, useState} from 'react';
 import Button from '@enact/sandstone/Button';
 import VirtualList from "@enact/sandstone/VirtualList";
 
-const test = [{
-    device_id:"1",
-    title:"1",
-    start:new Date(),
-    end:new Date(),
-}];
-
 const Todolist=(props)=>{
     return(
-        <div>
+        <div {...props}>
             <Button
                 size='large'
                 onClick={()=>{
+                    props.setData(null);
                 }}
             >ADD</Button>
             <VirtualList
@@ -23,9 +17,10 @@ const Todolist=(props)=>{
                 itemRenderer={({ index }) => (
                     <div>
                         <Button
-                            index={index}
+                            key={index}
                             size='large'
                             onClick={()=>{
+                                props.setData(props.events[index]);
                             }}
                         >{props.events[index].title+""}</Button>
                         <div>{props.events[index].start.toLocaleString()}

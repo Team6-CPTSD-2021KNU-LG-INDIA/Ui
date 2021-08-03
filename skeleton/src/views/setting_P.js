@@ -5,15 +5,12 @@ import Datepick_ from '../components/Setting/Datepick_';
 import { Scroller } from '@fullcalendar/react';
 import styles from '../components/Setting/datepick.module.css';
 
-
-
 const setting_P=(props)=>{
-    
     return(
-        <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
+        <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(147, 177, 210)'}}>
 
             <Panel>
-                <Header  onClose={()=>{k
+                <Header  onClose={()=>{
                 let path = props.page.path.slice(); path.pop();
                 path.push('calendar');
                 props.movePage(path,{initialDate:props.page.args.targetDate});

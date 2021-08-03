@@ -3,12 +3,11 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
-import {makeValidEvents} from '../Modules/eventModule'
 
 function Calendar(props){
+  console.log(props.events);
   return(
       <div {...props}>
-       
         <FullCalendar
           customButtons={{
             customButton1:{
@@ -18,17 +17,16 @@ function Calendar(props){
                 path.push('crawling');
                 props.movePage(path,{});
             },
-            
           },
           customButton2:{
-            text:'REPEAT',
-            click:function(){
-              let path = props.page.path.slice(); path.pop();
-              path.push('setting');
-              props.movePage(path,{});
+              text:'REPEAT',
+              click:function(){
+                let path = props.page.path.slice(); path.pop();
+                path.push('setting');
+                props.movePage(path,{});
+            }
           }
-        }
-        }}
+          }}
           plugins={[dayGridPlugin,timeGridPlugin,interactionPlugin,listPlugin]}
           initialDate={props.page.args.initialDate}
           eventColor='black'
@@ -38,13 +36,12 @@ function Calendar(props){
           nowIndicator= 'true'
           eventOverlap='true'
           dayMaxEvents={1}
-          events={makeValidEvents(props.events,null,null)}
+          events={props.events}
           footerToolbar={{
             start: 'customButton1,customButton2',//listDay
             center: 'title',
             end: 'today prev,next',
-
-        }}
+          }}
           dateClick={function(info){
             let path = props.page.path.slice(); path.pop();
             path.push('detail');

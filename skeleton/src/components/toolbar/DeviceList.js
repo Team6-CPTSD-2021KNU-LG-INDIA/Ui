@@ -103,7 +103,7 @@ function ListComponent(props){
   }
   else if (props.devices.length === 0){
     return (
-      <BodyText>There is no connected device!!</BodyText>
+      <BodyText>There is no connected device!</BodyText>
     );
   }
   else{

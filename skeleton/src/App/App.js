@@ -3,21 +3,29 @@ import MainPanel from '../views/MainPanel';
 import Detail from '../views/Detail';
 import Setting_P from '../views/setting_P';
 import Crawling from '../views/Crawling';
-import { useState } from 'react';
-import {getEventList, loadEventList} from '../Modules/eventModule'
+import { useEffect, useState } from 'react';
+import {loadEventList} from '../Modules/eventModule'
 
-
-function App(props){
+function App(){
 	const [devices, setDevices] = useState([]);
-	const [events, setEvents] = useState([]); loadEventList(setEvents);
+	const [events, setEvents] = useState(false);
 	const pageList=['calendar','detail','setting','crawling'];
-
 	const [page, setPage] = useState({
 		path:['calendar'],
 		args:{
 			initialDate:new Date(),
 		},
 	});
+	if (events === false){
+		let timer = setInterval(() => {
+			loadEventList((res)=>{
+				if(res !== false){
+					setEvents(res.slice());
+					clearInterval(timer);
+				}
+			});
+		}, 100);
+	}
 	function movePage(path, args){
 		setPage({
 			path: path,
@@ -47,7 +55,6 @@ function App(props){
 		);
 		case('crawling'):
 		return (
-			
 			<Crawling depth={0} devices={devices}
 			pageList={pageList} page={page} movePage={movePage}
 			events={events} setEvents={setEvents}>

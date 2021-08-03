@@ -1,36 +1,33 @@
 import {callAPI} from './webosModule';
 
-let events=[];
-
-export function loadEventList(setEvents){
+export function loadEventList(Callback){
   callAPI('getEventlist',{},
-  (msg)=>{
-    events = msg.Response;
-    events.forEach(event=>{
-      event.start = new Date(event.start);
-      event.end = new Date(event.end);
-    });
-    setEvents(events);
-  },(msg)=>{
-    console.log(msg);
+    (msg)=>{
+      let events = msg.Response;
+      events.forEach(event=>{
+        event.start = new Date(event.start);
+        event.end = new Date(event.end);
+      });
+      Callback(events);
+    },(msg)=>{
+      console.log(msg);
   });
 }
 
 export function addEvent(event,setEvents){
   callAPI('addEvent',event,
   (msg)=>{
-    loadEventList(setEvents);
+    setEvents(msg.Response.slice());
   },(msg)=>{
     console.log(msg);
   });
 }
 
-export function getEventList(){
-  return events;
-}
-
-export function makeValidEvents(starttime, endtime){
-  return events;
+export function makeValidEvents(events, starttime, endtime){
+  if (events !== false)
+    return events.slice();
+  else 
+    return false;
 }
 
 export class EventInfo{

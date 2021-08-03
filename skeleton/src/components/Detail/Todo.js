@@ -4,11 +4,8 @@ import Todolist from './Todolist';
 
 const Todo =(props)=>{
     return(
-        <div>
-            <Todolist  events={props.events} page={props.page}> 
-            </Todolist>
-        </div>
-        
+        <Todolist  events={props.events} page={props.page} setData={props.setData}> 
+        </Todolist>
     );
 }
 

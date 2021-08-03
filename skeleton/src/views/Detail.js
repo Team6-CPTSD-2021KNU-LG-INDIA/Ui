@@ -6,8 +6,9 @@ import { useState } from 'react/cjs/react.development';
 
 
 const Detail= (props)=>{
+    const [data,setData] = useState(null);
     return(
-        <Column style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
+        <Column style={{height:'100%', width:'100%' , backgroundColor:'rgb(147, 177, 210)'}}>
         <Cell size='15%'>
             <Header
             size='small'
@@ -22,10 +23,10 @@ const Detail= (props)=>{
         <Cell size='85%'> 
             <Row style={{height:'100%'}}>
                 <Cell size='20%'>
-                    <Todo events={props.events} page={props.page}></Todo>
+                    <Todo events={props.events} page={props.page} setData={setData}></Todo>
                 </Cell>
                 <Cell size='80%'>
-                    <RightDetail events={props.events}  page={props.page} setEvents={props.setEvents}></RightDetail>
+                    <RightDetail events={props.events}  page={props.page} setEvents={props.setEvents} data={data}></RightDetail>
                 </Cell>
             </Row>
         </Cell>
