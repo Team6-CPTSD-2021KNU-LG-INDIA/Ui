@@ -52,7 +52,7 @@ const RightDetail =(props)=>{
                                     <Cell>
                                         <div>start</div> 
                                         <TimePicker
-                                            defaultValue={props.page.args.targetDate}
+                                            defaultValue={new Date(eventitem.start)}
                                             onChange={(data)=>{
                                                 eventitem.start=data.value.toUTCString();
                                             }}
@@ -61,7 +61,7 @@ const RightDetail =(props)=>{
                                     <Cell>
                                         <div>end</div> 
                                         <TimePicker
-                                            defaultValue={props.page.args.targetDate}
+                                            defaultValue={new Date(eventitem.end)}
                                             onChange={(data)=>{
                                                 eventitem.end=data.value.toUTCString();
                                             }}
@@ -107,7 +107,7 @@ const RightDetail =(props)=>{
             <Column>
                 <Cell size='13%'>
                     <Dropdown
-                        selected={devices.indexOf(eventitem.device_id)}
+                        defaultSelected={devices.indexOf(eventitem.device_id)}
                         inline
                         onSelect={({data,selected})=>{
                             if (selected == 0){
@@ -136,7 +136,7 @@ const RightDetail =(props)=>{
                                     <Cell>
                                         <div>start</div> 
                                         <TimePicker
-                                            value={new Date(eventitem.start)}
+                                            defaultValue={new Date(eventitem.start)}
                                             onChange={(data)=>{
                                                 eventitem.start=data.value.toUTCString();
                                             }}
@@ -145,7 +145,7 @@ const RightDetail =(props)=>{
                                     <Cell>
                                         <div>end</div> 
                                         <TimePicker
-                                            value={new Date(eventitem.end)}
+                                            defaultValue={new Date(eventitem.end)}
                                             onChange={(data)=>{
                                                 eventitem.end=data.value.toUTCString();
                                             }}
@@ -156,14 +156,14 @@ const RightDetail =(props)=>{
                             <Cell>
                                 <input 
                                     type="text" placeholder="Event title"
-                                    value={eventitem.title}
+                                    defaultValue={eventitem.title}
                                     onChange={(obj)=>{
                                         eventitem.title = obj.target.value;
                                     }}
                                 ></input>
                                 <textarea
                                     type="text"  cols="70" rows="4" 
-                                    value={eventitem.contents}
+                                    defaultValue={eventitem.contents}
                                     onChange={(obj)=>{
                                         eventitem.contents = obj.target.value;
                                     }}
@@ -179,7 +179,6 @@ const RightDetail =(props)=>{
                     }}>Modify</button>
                 </Cell>
             </Column>
-    
         );
     }
 }
