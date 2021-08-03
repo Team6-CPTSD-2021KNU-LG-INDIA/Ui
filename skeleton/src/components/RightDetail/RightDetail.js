@@ -106,7 +106,7 @@ const RightDetail =(props)=>{
 
                             <div>
                             {contents}
-                            <button style={{fontSize:"20px", color:"black", backgroundColor:"grey",display:"flex"}}type="button" onClick={()=>{
+                            <button style={{fontSize:"15px", color:"black", backgroundColor:"grey",display:"flex"}}type="button" onClick={()=>{
                     addEvent(eventitem, props.setEvents);
                 }}>Add</button>
                             </div>
@@ -114,9 +114,9 @@ const RightDetail =(props)=>{
                     </Scroller>
                 </Column>
             </Cell>
-            <Cell size='7%'>
+            {/*<Cell size='7%'>
 
-            </Cell>
+            </Cell>*/}
         </Column>
 
     );
