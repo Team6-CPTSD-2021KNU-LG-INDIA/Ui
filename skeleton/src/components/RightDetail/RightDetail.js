@@ -8,112 +8,180 @@ import Dropdown from '@enact/sandstone/Dropdown';
 
 
 const RightDetail =(props)=>{
-    let eventitem;
+    const devices = [null].concat(getDevices());
+    useEffect(()=>{
+        console.log('detail');
+        console.log(props.data);
+    },[props.data]);
     if (props.data === null){
-        eventitem = new EventInfo(
+        let eventitem = new EventInfo(
             null,null,"event",null,
             props.page.args.targetDate.toUTCString(),
             props.page.args.targetDate.toUTCString()
         )
+        return(
+            <Column>
+                <Cell size='13%'>
+                    <Dropdown
+                        defaultSelected={0}
+                        inline
+                        onSelect={({data,selected})=>{
+                            if (selected == 0){
+                                eventitem.device_id = null;
+                            }
+                            else{
+                                eventitem.device_id = devices[selected-1].id;
+                            }
+                        }}
+                    >
+                        {devices.map(device=>{
+                            if (device === null)
+                                return `None`;
+                            else
+                                return `${device.name}(${device.id})`
+                        })}
+                    </Dropdown>
+                </Cell>
+                <Cell size='80%' >
+                    <Column>
+                        <Scroller
+                            verticalScrollbar='visible'
+                        >
+                            <Cell>
+                                <Row>
+                                    <Cell>
+                                        <div>start</div> 
+                                        <TimePicker
+                                            defaultValue={props.page.args.targetDate}
+                                            onChange={(data)=>{
+                                                eventitem.start=data.value.toUTCString();
+                                            }}
+                                        ></TimePicker>
+                                    </Cell>
+                                    <Cell>
+                                        <div>end</div> 
+                                        <TimePicker
+                                            defaultValue={props.page.args.targetDate}
+                                            onChange={(data)=>{
+                                                eventitem.end=data.value.toUTCString();
+                                            }}
+                                        ></TimePicker>
+                                    </Cell>
+                                </Row>
+                            </Cell>
+                            <Cell>
+                                <input 
+                                    type="text" placeholder="Event title"
+                                    defaultValue={'event'}
+                                    onChange={(obj)=>{
+                                        eventitem.title = obj.target.value;
+                                    }}
+                                ></input>
+                                <textarea
+                                    type="text"  cols="70" rows="4" 
+                                    defaultValue={null}
+                                    onChange={(obj)=>{
+                                        eventitem.contents = obj.target.value;
+                                    }}
+                                ></textarea>
+                            </Cell>
+                        </Scroller>
+                    </Column>
+                </Cell>
+                <Cell size='7%'>
+                    <button type="button" onClick={()=>{
+                        addEvent(eventitem, props.setEvents);
+                        props.setData(null);
+                    }}>Add</button>
+                </Cell>
+            </Column>
+    
+        );
     }
     else{
-        eventitem = JSON.parse(JSON.stringify(props.data));
-    }
-    console.log(eventitem);
-    const devices = getDevices();
-    const contents = (<textarea
-         type="text"  cols="70" rows="4" 
-         defaultValue={eventitem.contents}
-         onChange={(obj)=>{
-             eventitem.contents = obj.target.value;
-         }}
-         ></textarea>)
-    const title = (
-        <input 
-        type="text" placeholder="Event title"
-        defaultValue={eventitem.title}
-        onChange={(obj)=>{
-            eventitem.title = obj.target.value;
-        }}
-        ></input>)
-    const targetdevice=(
-        <Dropdown
-            defaultSelected={(()=>{
-                if (eventitem.device_id == null){
-                    return 0;
-                }
-                for(let i=1; i<devices.length+1; i++){
-                    if (devices[i].id == eventitem.device_id){
-                        return i;
-                    }
-                }
-            })()}
-            inline
-            onSelect={({data,selected})=>{
-                if (selected == 0){
-                    eventitem.device_id = null;
-                }
-                else{
-                    eventitem.device_id = devices[selected-1].id;
-                }
-            }}
-            //title="Target Device"
-        >
-        {['None'].concat(devices.map(device=>{
-            return `${device.name}(${device.id})`
-        }))}
-        </Dropdown>
-    );
-    const startTime=(<TimePicker
-        defaultValue={new Date(eventitem.start)}
-        onChange={(data)=>{
-            eventitem.start=data.value.toUTCString();
-        }}
-    ></TimePicker>);
-    const endTime=(<TimePicker
-        defaultValue={new Date(eventitem.start)}
-        onChange={(data)=>{
-            eventitem.end=data.value.toUTCString();
-        }}
-    ></TimePicker>);
-    return(
-        <Column>
-            <Cell size='13%'>
-                {targetdevice}
-            </Cell>
-            <Cell size='80%' >
-                <Column>
-                    <Scroller
-                        verticalScrollbar='visible'
+        let eventitem = JSON.parse(JSON.stringify(props.data));
+        console.log('item');
+        console.log(eventitem);
+        console.log(devices.indexOf(eventitem.device_id));
+        return(
+            <Column>
+                <Cell size='13%'>
+                    <Dropdown
+                        selected={devices.indexOf(eventitem.device_id)}
+                        inline
+                        onSelect={({data,selected})=>{
+                            if (selected == 0){
+                                eventitem.device_id = null;
+                            }
+                            else{
+                                eventitem.device_id = devices[selected-1].id;
+                            }
+                        }}
                     >
-                        <Cell>
-                            <Row>
-                                <Cell>
-                                    <div>start</div> 
-                                    {startTime}
-                                </Cell>
-                                <Cell>
-                                    <div>end</div> 
-                                    {endTime}
-                                </Cell>
-                            </Row>
-                        </Cell>
-                        <Cell>
-                            {title}
-                            {contents}
-                        </Cell>
-                    </Scroller>
-                </Column>
-            </Cell>
-            <Cell size='7%'>
-                <button type="button" onClick={()=>{
-                    addEvent(eventitem, props.setEvents);
-                }}>Add</button>
-            </Cell>
-        </Column>
-
-    );
-
+                        {devices.map(device=>{
+                            if (device === null)
+                                return `None`;
+                            else
+                                return `${device.name}(${device.id})`
+                        })}
+                    </Dropdown>
+                </Cell>
+                <Cell size='80%' >
+                    <Column>
+                        <Scroller
+                            verticalScrollbar='visible'
+                        >
+                            <Cell>
+                                <Row>
+                                    <Cell>
+                                        <div>start</div> 
+                                        <TimePicker
+                                            value={new Date(eventitem.start)}
+                                            onChange={(data)=>{
+                                                eventitem.start=data.value.toUTCString();
+                                            }}
+                                        ></TimePicker>
+                                    </Cell>
+                                    <Cell>
+                                        <div>end</div> 
+                                        <TimePicker
+                                            value={new Date(eventitem.end)}
+                                            onChange={(data)=>{
+                                                eventitem.end=data.value.toUTCString();
+                                            }}
+                                        ></TimePicker>
+                                    </Cell>
+                                </Row>
+                            </Cell>
+                            <Cell>
+                                <input 
+                                    type="text" placeholder="Event title"
+                                    value={eventitem.title}
+                                    onChange={(obj)=>{
+                                        eventitem.title = obj.target.value;
+                                    }}
+                                ></input>
+                                <textarea
+                                    type="text"  cols="70" rows="4" 
+                                    value={eventitem.contents}
+                                    onChange={(obj)=>{
+                                        eventitem.contents = obj.target.value;
+                                    }}
+                                ></textarea>
+                            </Cell>
+                        </Scroller>
+                    </Column>
+                </Cell>
+                <Cell size='7%'>
+                    <button type="button" onClick={()=>{
+                    }}>Del</button>
+                    <button type="button" onClick={()=>{
+                    }}>Modify</button>
+                </Cell>
+            </Column>
+    
+        );
+    }
 }
 
 export default RightDetail; 

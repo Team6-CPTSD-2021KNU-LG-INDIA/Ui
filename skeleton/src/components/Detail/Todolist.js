@@ -23,11 +23,11 @@ const Todolist=(props)=>{
                                 props.setData(props.events[index]);
                             }}
                         >{props.events[index].title+""}</Button>
-                        <div>{props.events[index].start.toLocaleString()}
-                        -{props.events[index].end.toLocaleString()}</div>
+                        {/* <div>{props.events[index].start.toLocaleString()}
+                        -{props.events[index].end.toLocaleString()}</div> */}
                     </div>
                 )}
-                itemSize={120}
+                itemSize={100}
             />
         </div>
     );

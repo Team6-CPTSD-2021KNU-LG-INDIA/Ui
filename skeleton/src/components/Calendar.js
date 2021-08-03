@@ -3,9 +3,11 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
+import { useEffect, useState } from 'react/cjs/react.development';
+import React from 'react';
+import {makeValidEvents} from '../Modules/eventModule'
 
 function Calendar(props){
-  console.log(props.events);
   return(
       <div {...props}>
         <FullCalendar
@@ -36,7 +38,7 @@ function Calendar(props){
           nowIndicator= 'true'
           eventOverlap='true'
           dayMaxEvents={1}
-          events={props.events}
+          events={makeValidEvents()}
           footerToolbar={{
             start: 'customButton1,customButton2',//listDay
             center: 'title',

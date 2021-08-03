@@ -5,7 +5,7 @@ import {Row, Cell} from '@enact/ui/Layout';
 function MainPanel({depth,pageList,page,movePage, devices, setDevices, events, setEvents}){
 	return (
 		<div style={{height:'100%'}}>
-			<Row style={{height:'100%', width:'100%', backgroundColor:'rgb(83, 144, 149)',}}>
+			<Row style={{height:'100%', width:'100%', backgroundColor:'rgb(147, 177, 210)',}}>
 				<Cell size='75%'>
 					<Calendar style={{
 						marginLeft:'1%',

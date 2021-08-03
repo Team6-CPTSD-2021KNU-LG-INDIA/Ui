@@ -8,14 +8,16 @@ import { useState } from 'react/cjs/react.development';
 const Detail= (props)=>{
     const [data,setData] = useState(null);
     return(
-        <Column style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
+        <Column style={{height:'100%', width:'100%' , backgroundColor:'rgb(147, 177, 210)'}}>
         <Cell size='15%'>
             <Header
             size='small'
             onClose={()=>{
                 let path = props.page.path.slice(); path.pop();
                 path.push('calendar');
-                props.movePage(path,{initialDate:props.page.args.targetDate});
+                props.movePage(path,{
+                    initialDate:props.page.args.targetDate,
+                });
             }} title={props.page.args.targetDate.toString()} >
             </Header>
         </Cell>
@@ -26,7 +28,7 @@ const Detail= (props)=>{
                     <Todo events={props.events} page={props.page} setData={setData}></Todo>
                 </Cell>
                 <Cell size='80%'>
-                    <RightDetail events={props.events}  page={props.page} setEvents={props.setEvents} data={data}></RightDetail>
+                    <RightDetail events={props.events}  page={props.page} setEvents={props.setEvents} data={data} setData={setData}></RightDetail>
                 </Cell>
             </Row>
         </Cell>

@@ -1,5 +1,7 @@
 import {callAPI} from './webosModule';
 
+let eventlist=[];
+
 export function loadEventList(Callback){
   callAPI('getEventlist',{},
     (msg)=>{
@@ -8,6 +10,7 @@ export function loadEventList(Callback){
         event.start = new Date(event.start);
         event.end = new Date(event.end);
       });
+      eventlist = msg.Response.slice();
       Callback(events);
     },(msg)=>{
       console.log(msg);
@@ -17,17 +20,21 @@ export function loadEventList(Callback){
 export function addEvent(event,setEvents){
   callAPI('addEvent',event,
   (msg)=>{
-    setEvents(msg.Response.slice());
+    eventlist = msg.Response.slice();
+    setEvents(msg.Response);
   },(msg)=>{
     console.log(msg);
   });
 }
 
-export function makeValidEvents(events, starttime, endtime){
-  if (events !== false)
-    return events.slice();
-  else 
-    return false;
+export function makeValidEvents(starttime, endtime){
+  let res = eventlist.slice();
+  res.forEach(event=>{
+    event.start = new Date(event.start);
+    event.end = new Date(event.end);
+  });
+  console.log(res);
+  return res;
 }
 
 export class EventInfo{

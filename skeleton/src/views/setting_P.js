@@ -7,7 +7,7 @@ import styles from '../components/Setting/datepick.module.css';
 
 const setting_P=(props)=>{
     return(
-        <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
+        <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(147, 177, 210)'}}>
 
             <Panel>
                 <Header  onClose={()=>{

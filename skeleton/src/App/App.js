@@ -20,7 +20,7 @@ function App(){
 		let timer = setInterval(() => {
 			loadEventList((res)=>{
 				if(res !== false){
-					setEvents(res.slice());
+					setEvents(res);
 					clearInterval(timer);
 				}
 			});

@@ -5,7 +5,7 @@ import Weather_Info from '../Weather';
 function Sidebar(props){
   
     return(
-      <div {...props} style={{backgroundColor:'darkslategray', height:'100%'}}>
+      <div {...props} style={{backgroundColor:'rgb(40, 65, 87)', height:'100%'}}>
         
         <Column>
           {/* <Cell size="10%" style={{backgroundColor:''}}>
