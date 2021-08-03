@@ -13,7 +13,7 @@ const setting_P=(props)=>{
         <Row style={{height:'100%', width:'100%' , backgroundColor:'rgb(83, 144, 149)'}}>
 
             <Panel>
-                <Header  onClose={()=>{
+                <Header  onClose={()=>{k
                 let path = props.page.path.slice(); path.pop();
                 path.push('calendar');
                 props.movePage(path,{initialDate:props.page.args.targetDate});
