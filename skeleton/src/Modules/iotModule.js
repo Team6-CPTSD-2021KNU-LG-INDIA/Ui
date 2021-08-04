@@ -1,3 +1,5 @@
+const server=require('./config.json').iotServer;
+
 let Devices = [];
 
 class DeviceInfo{
@@ -15,10 +17,14 @@ export function makeDummy(){
   });
 }
 
-export function getDevices(){
-    return Devices;
+export function loadDevices(setDevices){
+  // request.get({
+  //   uri:`${server}/list`,
+  //   },function(err,httpRespond,body){
+  //     console.log(body);
+  //   });
 }
 
-export function loadDevices(){
-  
+export function getDevices(){
+    return Devices;
 }

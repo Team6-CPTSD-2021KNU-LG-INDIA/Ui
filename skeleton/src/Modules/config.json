@@ -1,3 +1,4 @@
 {
-    "serviceName": "com.domain.calcall.service"
+    "serviceName": "com.domain.calcall.service",
+    "iotServer": "http://13.125.215.180:3000"
 }

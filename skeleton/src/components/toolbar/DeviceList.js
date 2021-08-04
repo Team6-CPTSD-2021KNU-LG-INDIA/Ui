@@ -6,7 +6,7 @@ import BodyText from '@enact/sandstone/BodyText';
 import Input from '@enact/sandstone/Input';
 import VirtualList from "@enact/sandstone/VirtualList";
 import Item from '@enact/sandstone/Item';
-import {getDevices, makeDummy} from '../../Modules/iotModule'
+import {loadDevices, getDevices, makeDummy} from '../../Modules/iotModule'
 
 function ListItem({devices,index,setDevices}){
   //const statusList=['info','rename','remove']
@@ -122,9 +122,6 @@ function ListComponent(props){
   }
 }
 
-//
-
-
 function DeviceList(props){
   const [isSearch, setSearch] = useState(false);
 
@@ -145,10 +142,8 @@ function DeviceList(props){
           <Button
             onClick={()=>{
               setSearch(true);
-              setTimeout(()=>{
-                props.setDevices(getDevices());
-                setSearch(false);
-              },500)
+              loadDevices(props.setDevices);
+              setSearch(false);
             }}
             size='small'>
             Search Device</Button>
