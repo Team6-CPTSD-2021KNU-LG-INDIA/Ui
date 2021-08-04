@@ -39,7 +39,7 @@ function Calendar(props){
           dayMaxEvents={1}
           events={makeValidEvents()}
           footerToolbar={{
-            start: 'customButton1,customButton2',//listDay
+            start: 'customButton1',//listDay
             center: 'title',
             end: 'today prev,next',
           }}

@@ -34,7 +34,6 @@ const Detail= (props)=>{
         </Cell>
         </Column>
     );
-
 }
 
 export default Detail;
