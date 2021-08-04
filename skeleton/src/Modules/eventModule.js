@@ -66,6 +66,7 @@ export function addEvent(event, setEvents) {
     "addEvent",
     event,
     (msg) => {
+      console.log('complete!');
       eventlist = msg.Response.slice();
       setEvents(msg.Response);
     },

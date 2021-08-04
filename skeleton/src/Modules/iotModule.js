@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const server=require('./config.json').iotServer;
 
 let Devices = [];
@@ -11,18 +13,30 @@ class DeviceInfo{
     }
 }
 
-export function makeDummy(){
-  ['1','2','3','4','5','6','7','8','9','10'].forEach((item)=>{
-      Devices.push(new DeviceInfo(item,'id',[],true));
+export function loadDevices(setDevices,setSearch){
+  axios.get(`${server}/list`, {
+    // headers: {
+    //   "Content-Type": "application/json",
+    // },
+  }).then((res)=>{
+    let data = res.data;
+    Devices = data.map((item)=>{
+      return new DeviceInfo(
+        item.device_name,
+        item.id,
+        item.api,
+        true
+      );
+    });
+    setDevices(Devices);
+    setSearch(false);
+  },(err)=>{
+    console.error(err);
   });
 }
 
-export function loadDevices(setDevices){
-  // request.get({
-  //   uri:`${server}/list`,
-  //   },function(err,httpRespond,body){
-  //     console.log(body);
-  //   });
+export function updateList(data){
+  Devices = data.slice();
 }
 
 export function getDevices(){

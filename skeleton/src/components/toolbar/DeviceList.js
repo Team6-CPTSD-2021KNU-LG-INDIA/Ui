@@ -6,7 +6,8 @@ import BodyText from '@enact/sandstone/BodyText';
 import Input from '@enact/sandstone/Input';
 import VirtualList from "@enact/sandstone/VirtualList";
 import Item from '@enact/sandstone/Item';
-import {loadDevices, getDevices, makeDummy} from '../../Modules/iotModule'
+import Heading from '@enact/sandstone/Heading';
+import {loadDevices,updateList} from '../../Modules/iotModule'
 
 function ListItem({devices,index,setDevices}){
   //const statusList=['info','rename','remove']
@@ -73,6 +74,7 @@ function ListItem({devices,index,setDevices}){
             onClick={(e)=>{
               let res = devices.slice();
               res.splice(index,1);
+              updateList(res);
               setDevices(res);
               setStatus(0);
             }}
@@ -129,7 +131,7 @@ function DeviceList(props){
     <div {...props}>
         <Column align='center' style={{height:'100%', width:'100%'}}>
           <Cell shrink>
-            {/* <Heading showLine>Connected Devices</Heading> */}
+            <Heading size='small' centered='true' showLine='true' >Device list</Heading>
           </Cell>
           <Cell>
             <ListComponent
@@ -138,12 +140,10 @@ function DeviceList(props){
               setDevices={props.setDevices}
             />
 					</Cell>
-
           <Button
             onClick={()=>{
               setSearch(true);
-              loadDevices(props.setDevices);
-              setSearch(false);
+              loadDevices(props.setDevices,setSearch);
             }}
             size='small'>
             Search Device</Button>
