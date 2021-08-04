@@ -103,7 +103,10 @@ function ListComponent(props){
   }
   else if (props.devices.length === 0){
     return (
-      <BodyText>There is no connected device!</BodyText>
+      <BodyText style={{color:"white", marginTop:"10px", textAlign:
+      "center"}}>There is no
+      <br style={{height:"10px"}}></br> 
+      connected device!</BodyText>
     );
   }
   else{

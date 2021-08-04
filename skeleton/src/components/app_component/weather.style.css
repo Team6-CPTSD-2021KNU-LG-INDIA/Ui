@@ -10,8 +10,9 @@
     background-color: cornsilk; /*City, Country 입력 할 때, 반응하는 배경색*/
     box-shadow: none !important;
     border: none;
-    border-width: 100px;
+    border-width: 80px;
     border-bottom: 5px solid Darkred;
+
   }
   
   form {

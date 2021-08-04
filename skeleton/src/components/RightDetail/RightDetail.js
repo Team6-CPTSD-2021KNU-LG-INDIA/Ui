@@ -90,11 +90,11 @@ const RightDetail =(props)=>{
                         <Cell>
                             <Row>
                                 <Cell>
-                                    <div>start</div> 
+                                    <div>START</div> 
                                     {startTime}
                                 </Cell>
                                 <Cell>
-                                    <div>end</div> 
+                                    <div>END</div> 
                                     {endTime}
                                 </Cell>
                             </Row>
@@ -106,7 +106,7 @@ const RightDetail =(props)=>{
 
                             <div>
                             {contents}
-                            <button style={{fontSize:"15px", color:"black", backgroundColor:"grey",display:"flex"}}type="button" onClick={()=>{
+                            <button style={{fontSize:"15px", color:"black", backgroundColor:"grey",display:"flex", borderRadius:"0.25rem"}}type="button" onClick={()=>{
                     addEvent(eventitem, props.setEvents);
                 }}>Add</button>
                             </div>
