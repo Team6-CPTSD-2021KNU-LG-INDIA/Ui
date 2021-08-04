@@ -12,11 +12,12 @@ const Form = (props) => {
     <div>
       <div className="thisform" style={{marginTop:"-60px"}}>
             <button onClick={(e) =>{ 
-              
               setShowed(false); }} style={{borderRadius:"180px",background:"none",
-            float:'right',width:"35px",height:"35px",fontSize:"15px"}}>+</button>
-            <button onClick={(e) => setShowed(true) }style={{borderRadius:"180px",background:"none",width:"35px",
-            height:"35px",fontSize:"15px",float:'right',marginRight:"10px"}}>-</button>
+            float:'right',width:"20px",height:"20px",fontSize:"15px", marginRight:"25px", marginTop:"14px", color:"white"}}>+</button>
+
+            <button onClick={(e) => 
+            setShowed(true) } style={{borderRadius:"180px",background:"none",width:"20px",
+            height:"20px",fontSize:"15px",float:'right',marginRight:"10px", marginTop:"14px", color:"white"}}>-</button>
       </div>
     <div className="container h-200">
       
@@ -43,7 +44,7 @@ const Form = (props) => {
                 autoComplete="off"
               />
             </div>
-            <button className="btn btn-warning" style={{width:"200px", heigth:"1px", fontSize:"12px"}}>Get weather!</button>
+            <button className="btn btn-warning" style={{width:"170px", heigth:"1px", fontSize:"11px"}}>Get weather!</button>
             <div> {props.error ? error() : ""}
             </div>
             </div>

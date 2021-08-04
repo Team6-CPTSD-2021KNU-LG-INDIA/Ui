@@ -3,11 +3,10 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
-import { useEffect, useState } from 'react/cjs/react.development';
-import React from 'react';
 import {makeValidEvents} from '../Modules/eventModule'
 
 function Calendar(props){
+  console.log(props.events);
   return(
       <div {...props}>
         <FullCalendar

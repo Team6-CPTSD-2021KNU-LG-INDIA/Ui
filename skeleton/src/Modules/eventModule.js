@@ -1,7 +1,6 @@
 import {callAPI} from './webosModule';
 
 let eventlist=[];
-
 export function loadEventList(Callback){
   callAPI('getEventlist',{},
     (msg)=>{
@@ -26,7 +25,6 @@ export function addEvent(event,setEvents){
     console.log(msg);
   });
 }
-
 export function makeValidEvents(starttime, endtime){
   let res = eventlist.slice();
   res.forEach(event=>{

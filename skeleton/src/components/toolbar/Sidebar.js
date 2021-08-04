@@ -20,8 +20,11 @@ function Sidebar(props){
 								devices={props.devices} setDevices={props.setDevices}
 							/>
           </Cell>
+
+          <hr style={{width:"300px", color:"black"}}></hr>
+          
           <Cell size="40%" style={{height:"100%"}}>
-            <BodyText>weather</BodyText>            
+            <BodyText style={{color:"white", paddingLeft:"15px"}}>weather</BodyText>            
             <Weather_Info>
 
             </Weather_Info>
