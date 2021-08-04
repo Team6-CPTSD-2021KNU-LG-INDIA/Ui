@@ -63,8 +63,9 @@ export const crawlerEvent = async (input, setEvents) => {
 
 export function addEvent(event, setEvents) {
   callAPI(
-    "addEvent",
-    event,
+    "addEvent",{
+      'data': event,
+    },
     (msg) => {
       console.log('complete!');
       eventlist = msg.Response.slice();
@@ -75,6 +76,7 @@ export function addEvent(event, setEvents) {
     }
   );
 }
+
 export function makeValidEvents(starttime, endtime) {
   let res = eventlist.slice();
   res.forEach((event) => {
