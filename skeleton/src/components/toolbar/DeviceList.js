@@ -8,8 +8,6 @@ import VirtualList from "@enact/sandstone/VirtualList";
 import Item from '@enact/sandstone/Item';
 import {getDevices, makeDummy} from '../../Modules/iotModule'
 
-makeDummy();
-
 function ListItem({devices,index,setDevices}){
   //const statusList=['info','rename','remove']
   const [status,setStatus] = useState(0)
