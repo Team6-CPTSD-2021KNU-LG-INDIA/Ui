@@ -53,9 +53,9 @@ export const crawlerEvent = async (input, setEvents) => {
         datetime.toUTCString(),
         datetime.toUTCString()
       );
-      console.log(eventItem);
-      addEvent(eventItem, setEvents);
+      eventLists.push(eventItem);
     }
+    addEvent(eventLists, setEvents);
   } catch (error) {
     console.log(error);
   }
