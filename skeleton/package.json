@@ -30,6 +30,7 @@
 		"dist/*"
 	],
 	"dependencies": {
+		"@enact/cli": "^4.0.3",
 		"@enact/core": "^4.0.0",
 		"@enact/i18n": "^4.0.0",
 		"@enact/sandstone": "^2.0.0-alpha.2",
@@ -42,6 +43,7 @@
 		"@fullcalendar/list": "^5.8.0",
 		"@fullcalendar/react": "^5.8.0",
 		"@fullcalendar/timegrid": "^5.8.0",
+		"axios": "^0.21.1",
 		"ilib": "^14.6.0",
 		"mdbreact": "^5.1.0",
 		"prop-types": "^15.6.2",

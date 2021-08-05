@@ -6,7 +6,6 @@ import Scroller from '@enact/sandstone/Scroller';
 import TimePicker from '@enact/sandstone/TimePicker';
 import Dropdown from '@enact/sandstone/Dropdown';
 
-
 const RightDetail =(props)=>{
     const devices = [null].concat(getDevices());
     useEffect(()=>{
@@ -90,7 +89,7 @@ const RightDetail =(props)=>{
                 </Cell>
                 <Cell size='7%'>
                     <button type="button" onClick={()=>{
-                        addEvent(eventitem, props.setEvents);
+                        addEvent([eventitem], props.setEvents);
                         props.setData(null);
                     }}>Add</button>
                 </Cell>
