@@ -44,7 +44,8 @@ const Form = (props) => {
                 autoComplete="off"
               />
             </div>
-            <button className="btn btn-warning" style={{width:"170px", heigth:"1px", fontSize:"11px"}}>Get weather!</button>
+            <button className="btn btn-warning" style={{width:"190px", heigth:"2rem", fontSize:"11px"}}>
+              <div style={{paddingBottom:"10px", fontize:"11px"}}>Get Weather! </div></button>
             <div> {props.error ? error() : ""}
             </div>
             </div>

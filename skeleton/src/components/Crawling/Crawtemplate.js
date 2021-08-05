@@ -27,6 +27,7 @@ const Crawtemplate = (props) => {
           <MDBFormInline className="md-form">
             <MDBIcon icon="search" />
             <form>
+              <div style={{float:"left"}}>
               <input
                 className="form-control form-control-sm ml-3 w-75"
                 type="text"
@@ -34,8 +35,11 @@ const Crawtemplate = (props) => {
                 aria-label="Search"
                 onChange={inputhandle}
               />
+              </div>
+              <div style={{float:"left"}}>
               <button
                 className="button1"
+                style={{fontSize:"14px", textAlign:"center", marginTop:"11px"}}
                 type="button"
                 onClick={() => {
                   crawlerEvent(input, props.setEvents);
@@ -43,6 +47,7 @@ const Crawtemplate = (props) => {
               >
                 Click
               </button>
+              </div>
             </form>
           </MDBFormInline>
         </MDBCol>
