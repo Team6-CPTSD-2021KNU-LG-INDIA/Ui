@@ -4,10 +4,10 @@
   
   .container input,
   .container ::-webkit-input-placeholder {
-    color: black !important; /*City, Country 폰트 색*/
+    color: white !important; /*City, Country 폰트 색*/
   }
   .container input:focus {
-    background-color: cornsilk; /*City, Country 입력 할 때, 반응하는 배경색*/
+    background-color: rgb(40,65,87); /*City, Country 입력 할 때, 반응하는 배경색*/
     box-shadow: none !important;
     border: none;
     border-width: 80px;
@@ -23,13 +23,13 @@
   form input[name="city"],
   form input[name="country"] {
     background-color: transparent;
-    color: black;
+    color: white;
     /* width:200px; */
     height: 100px;
     text-align: center;
     /* margin-left: 50%; */
     border: none;
-    border-bottom: 5px solid Darkred;
+    border-bottom: 5px solid white;
     border-radius: 0;
   }
   
